@@ -1,3 +1,9 @@
+---
+layout: page
+title: Notes
+permalink: /notes/
+---
+
 Bash Commands:
 
 
