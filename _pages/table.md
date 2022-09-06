@@ -36,7 +36,7 @@ permalink: /table/
         <td>
             <a href="https://github.com/aliyatang/Aliya/issues/4">Week 2 Review Ticket</a>
         </td>
-        <td></td>
+        <td>2.9/3.0</td>
     </tr>
 
     <tr>
