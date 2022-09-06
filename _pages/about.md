@@ -16,4 +16,4 @@ Fun Facts About Me:
 
 * I have two cats, Apollo and Luca
 * I love watermelon, it's my favorite fruit!
-* Some of my hobbies include: Painting, drawing, cooking
+* Some of my hobbies include: painting, drawing, cooking
