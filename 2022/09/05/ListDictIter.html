@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Lists, Dictioinaries, Iteration | Aliya’s Blog ✧/ᐠ-ꞈ-ᐟ\</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Lists, Dictioinaries, Iteration" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An introduction to python lists and dictionaries!" />
+<meta property="og:description" content="An introduction to python lists and dictionaries!" />
+<link rel="canonical" href="https://aliyatang.github.io/Aliya/2022/09/05/ListDictIter.html" />
+<meta property="og:url" content="https://aliyatang.github.io/Aliya/2022/09/05/ListDictIter.html" />
+<meta property="og:site_name" content="Aliya’s Blog ✧/ᐠ-ꞈ-ᐟ\" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-05T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Lists, Dictioinaries, Iteration" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-05T00:00:00-05:00","datePublished":"2022-09-05T00:00:00-05:00","description":"An introduction to python lists and dictionaries!","headline":"Lists, Dictioinaries, Iteration","mainEntityOfPage":{"@type":"WebPage","@id":"https://aliyatang.github.io/Aliya/2022/09/05/ListDictIter.html"},"url":"https://aliyatang.github.io/Aliya/2022/09/05/ListDictIter.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/Aliya/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://aliyatang.github.io/Aliya/feed.xml" title="Aliya's Blog ✧/ᐠ-ꞈ-ᐟ\" /><link rel="shortcut icon" type="image/x-icon" href="/Aliya/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/Aliya/">Aliya&#39;s Blog ✧/ᐠ-ꞈ-ᐟ\</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/Aliya/about/">About Me</a><a class="page-link" href="/Aliya/notes/">Notes</a><a class="page-link" href="/Aliya/search/">Search</a><a class="page-link" href="/Aliya/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Lists, Dictioinaries, Iteration</h1><p class="page-description">An introduction to python lists and dictionaries!</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-05T00:00:00-05:00" itemprop="datePublished">
+        Sep 5, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/aliyatang/Aliya/tree/master/_notebooks/2022-09-05-ListDictIter.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/Aliya/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/aliyatang/Aliya/master?filepath=_notebooks%2F2022-09-05-ListDictIter.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Aliya/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/aliyatang/Aliya/blob/master/_notebooks/2022-09-05-ListDictIter.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Aliya/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Faliyatang%2FAliya%2Fblob%2Fmaster%2F_notebooks%2F2022-09-05-ListDictIter.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/Aliya/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-09-05-ListDictIter.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Lists and dictionaries are used to collect information. Mostly, when information is collected it is formed into patterns. As that pattern is established you will be able collect many instances of that pattern.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A 'list' data type has the method '.append(expression)' that allows you to add to the list. At the end, you see a fairly complicated data structure. This is a list of dictionaries, or a collection of many similar data patterns.</p>
+<p>In the code below, information about two different pets are being added into the dictionary using the append method.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">InfoDb</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># InfoDB is a data structure with expected Keys and Values, in this case </span>
+
+<span class="c1"># Append to List a Dictionary of key/values related to pets</span>
+<span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">&quot;Species&quot;</span><span class="p">:</span> <span class="s2">&quot;Cat&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Apollo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Nickname&quot;</span><span class="p">:</span> <span class="s2">&quot;Bingus&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Age&quot;</span><span class="p">:</span> <span class="s2">&quot;2 years&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Owner&quot;</span><span class="p">:</span> <span class="s2">&quot;Aliya&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Fur_Color&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Orange&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Eye_Color&quot;</span><span class="p">:</span> <span class="s2">&quot;Green&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Fav_Toy&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Shoe&quot;</span><span class="p">,</span> <span class="s2">&quot;Laser Pointer&quot;</span><span class="p">,</span> <span class="s2">&quot;Plastic Wrap&quot;</span><span class="p">,</span><span class="s2">&quot;Box&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Append to List a 2nd Dictionary of key/values</span>
+<span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">&quot;Species&quot;</span><span class="p">:</span> <span class="s2">&quot;Cat&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Luca&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Nickname&quot;</span><span class="p">:</span> <span class="s2">&quot;Mart&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Age&quot;</span><span class="p">:</span> <span class="s2">&quot;2 years&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Owner&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Fur_Color&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Orange&quot;</span><span class="p">,</span><span class="s2">&quot;White&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Eye_Color&quot;</span><span class="p">:</span> <span class="s2">&quot;Yellow&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Fav_Toy&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Mouse Plush&quot;</span><span class="p">,</span><span class="s2">&quot;Box&quot;</span><span class="p">,</span><span class="s2">&quot;String&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Print the data structure</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[{&#39;Species&#39;: &#39;Cat&#39;, &#39;Name&#39;: &#39;Apollo&#39;, &#39;Nickname&#39;: &#39;Bingus&#39;, &#39;Age&#39;: &#39;2 years&#39;, &#39;Owner&#39;: &#39;Aliya&#39;, &#39;Fur_Color&#39;: [&#39;Orange&#39;], &#39;Eye_Color&#39;: &#39;Green&#39;, &#39;Fav_Toy&#39;: [&#39;Shoe&#39;, &#39;Laser Pointer&#39;, &#39;Plastic Wrap&#39;, &#39;Box&#39;]}, {&#39;Species&#39;: &#39;Cat&#39;, &#39;Name&#39;: &#39;Luca&#39;, &#39;Nickname&#39;: &#39;Mart&#39;, &#39;Age&#39;: &#39;2 years&#39;, &#39;Owner&#39;: &#39;Alice&#39;, &#39;Fur_Color&#39;: [&#39;Orange&#39;, &#39;White&#39;], &#39;Eye_Color&#39;: &#39;Yellow&#39;, &#39;Fav_Toy&#39;: [&#39;Mouse Plush&#39;, &#39;Box&#39;, &#39;String&#39;]}]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="For-Loop">For Loop<a class="anchor-link" href="#For-Loop"> </a></h2><p>In the code below, we take the stored data about the pets and output/print it in the notebook. First we prepare a function to format the data, then a function to iterate through the InfoDb list, and lastly activate the function with the call to the defined function.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_data</span><span class="p">(</span><span class="n">d_rec</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d_rec</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">],</span> <span class="s2">&quot;the&quot;</span><span class="p">,</span> <span class="n">d_rec</span><span class="p">[</span><span class="s2">&quot;Species&quot;</span><span class="p">])</span>  <span class="c1"># using comma puts space between values</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Owner:&quot;</span><span class="p">,</span> <span class="n">d_rec</span><span class="p">[</span><span class="s2">&quot;Owner&quot;</span><span class="p">])</span> <span class="c1">#\t is tab</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Nickname:&quot;</span><span class="p">,</span> <span class="n">d_rec</span><span class="p">[</span><span class="s2">&quot;Nickname&quot;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Age:&quot;</span><span class="p">,</span> <span class="n">d_rec</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;Traits: &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; + &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d_rec</span><span class="p">[</span><span class="s2">&quot;Fur_Color&quot;</span><span class="p">]),</span> <span class="s2">&quot;fur with&quot;</span><span class="p">,</span> <span class="n">d_rec</span><span class="p">[</span><span class="s2">&quot;Eye_Color&quot;</span><span class="p">],</span> <span class="s2">&quot;eyes&quot;</span><span class="p">)</span> <span class="c1">#putting multiple values in one section (traits)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Favorite Toy(s): &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="c1">#the end makes sure it doesn&#39;t enter to a new line</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d_rec</span><span class="p">[</span><span class="s2">&quot;Fav_Toy&quot;</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+
+<span class="c1"># for loop algorithm iterates on length of InfoDb</span>
+<span class="k">def</span> <span class="nf">for_loop</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For loop output</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">InfoDb</span><span class="p">:</span>
+        <span class="n">print_data</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+
+<span class="n">for_loop</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>For loop output
+
+Apollo the Cat
+	 Owner: Aliya
+	 Nickname: Bingus
+	 Age: 2 years
+	 Traits: Orange fur with Green eyes
+	 Favorite Toy(s): Shoe, Laser Pointer, Plastic Wrap, Box
+
+Luca the Cat
+	 Owner: Alice
+	 Nickname: Mart
+	 Age: 2 years
+	 Traits: Orange + White fur with Yellow eyes
+	 Favorite Toy(s): Mouse Plush, Box, String
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Alternate-methods-for-iteration">Alternate methods for iteration<a class="anchor-link" href="#Alternate-methods-for-iteration"> </a></h2><p>In coding, there are usually many wasy to achieve the same result. Defined are functions illustratng using index to reference records in a list, these methods are called a "while" loop and "recursion".</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="While-Loop">While Loop<a class="anchor-link" href="#While-Loop"> </a></h3><p>The while_loop() function contains a while loop, "while i &lt; len(InfoDb):". This counts through the elements in the list start at zero, and passes the record to print_data()</p>
+<p>In the code below, the while loop outputs the information about the pets. The program doesn't end as long as the variable number (i) is less than the length of the InfoDb list.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">while_loop</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;While loop output</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">):</span>
+        <span class="n">record</span> <span class="o">=</span> <span class="n">InfoDb</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">print_data</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span>
+
+<span class="n">while_loop</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>While loop output
+
+Apollo the Cat
+	 Owner: Aliya
+	 Nickname: Bingus
+	 Age: 2 years
+	 Traits: Orange fur with Green eyes
+	 Favorite Toy(s): Shoe, Laser Pointer, Plastic Wrap, Box
+
+Luca the Cat
+	 Owner: Alice
+	 Nickname: Mart
+	 Age: 2 years
+	 Traits: Orange + White fur with Yellow eyes
+	 Favorite Toy(s): Mouse Plush, Box, String
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Recursion">Recursion<a class="anchor-link" href="#Recursion"> </a></h3><p>The code below prints information about the pets with recursion by calling itself repeatedly. The progam ends once the i value exceeds the length of the InfoDb length, just like the while loop.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">recursive_loop</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">):</span>
+        <span class="n">record</span> <span class="o">=</span> <span class="n">InfoDb</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">print_data</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+        <span class="n">recursive_loop</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Recursive loop output</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">recursive_loop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Recursive loop output
+
+Apollo the Cat
+	 Owner: Aliya
+	 Nickname: Bingus
+	 Age: 2 years
+	 Traits: Orange fur with Green eyes
+	 Favorite Toy(s): Shoe, Laser Pointer, Plastic Wrap, Box
+
+Luca the Cat
+	 Owner: Alice
+	 Nickname: Mart
+	 Age: 2 years
+	 Traits: Orange + White fur with Yellow eyes
+	 Favorite Toy(s): Mouse Plush, Box, String
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Quiz">Quiz<a class="anchor-link" href="#Quiz"> </a></h2><p>This is a quiz about the capitals of different countries that stores information in a list of dictionaries.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">QuizDb</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;China&quot;</span><span class="p">:</span><span class="s2">&quot;beijing&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;United States&quot;</span><span class="p">:</span><span class="s2">&quot;washington dc&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;Canada&quot;</span><span class="p">:</span><span class="s2">&quot;ottowa&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;Russia&quot;</span><span class="p">:</span><span class="s2">&quot;moscow&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;Japan&quot;</span><span class="p">:</span><span class="s2">&quot;tokyo&quot;</span><span class="p">}</span>
+
+<span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">q_and_a</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;What is the capital of &quot;</span> <span class="o">+</span> <span class="n">q</span> <span class="o">+</span> <span class="s2">&quot;?:&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">QuizDb</span><span class="p">[</span><span class="n">q</span><span class="p">]</span> <span class="o">==</span> <span class="n">user_input</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span> <span class="c1">#converts what user typed into lowercase to prevent mistakes</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">user_input</span> <span class="o">+</span> <span class="s2">&quot; is correct! Nice job.&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">user_input</span> <span class="o">+</span> <span class="s2">&quot; is incorrect. Oops!&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+<span class="n">correct</span> <span class="o">+=</span> <span class="n">q_and_a</span><span class="p">(</span><span class="s2">&quot;China&quot;</span><span class="p">)</span>
+<span class="n">correct</span> <span class="o">+=</span> <span class="n">q_and_a</span><span class="p">(</span><span class="s2">&quot;United States&quot;</span><span class="p">)</span>
+<span class="n">correct</span> <span class="o">+=</span> <span class="n">q_and_a</span><span class="p">(</span><span class="s2">&quot;Canada&quot;</span><span class="p">)</span>
+<span class="n">correct</span> <span class="o">+=</span> <span class="n">q_and_a</span><span class="p">(</span><span class="s2">&quot;Russia&quot;</span><span class="p">)</span>
+<span class="n">correct</span> <span class="o">+=</span> <span class="n">q_and_a</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nice try, you got &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">correct</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/5 correct.&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>What is the capital of China?:
+beijing is correct! Nice job.
+What is the capital of United States?:
+washington dc is correct! Nice job.
+What is the capital of Canada?:
+Ottowa is correct! Nice job.
+What is the capital of Russia?:
+Moscow is correct! Nice job.
+What is the capital of Japan?:
+hi is incorrect. Oops!
+Nice try, you got 4/5 correct.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/Aliya/2022/09/05/ListDictIter.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/Aliya/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/Aliya/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/Aliya/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/Aliya/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/Aliya/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
