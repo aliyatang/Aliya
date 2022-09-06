@@ -34,7 +34,7 @@ permalink: /table/
         <td>2</td>
         <td>Data Abstraction</td>
         <td>
-            <a href="">Week 2 Review Ticket</a>
+            <a href="https://github.com/aliyatang/Aliya/issues/4">Week 2 Review Ticket</a>
         </td>
         <td></td>
     </tr>
