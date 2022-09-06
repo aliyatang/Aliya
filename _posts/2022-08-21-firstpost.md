@@ -1,11 +1,11 @@
 ---
 toc: true
 layout: post
-description: my first post
-categories: [markdown]
+description: Hi, this is my first post!
+categories: [markdown, week0]
 title: Aliya's First Post
 ---
 
 ## First Post
 
-Write stuff here later
+Hi, I'm Aliya! 
