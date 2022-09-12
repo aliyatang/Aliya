@@ -43,7 +43,7 @@ permalink: /table/
         <td>3</td>
         <td>Intro to Python</td>
         <td>
-            <a href="">Week 3 Review Ticket</a>
+            <a href="https://github.com/aliyatang/Aliya/issues/5">Week 3 Review Ticket</a>
         </td>
         <td></td>
     </tr>
