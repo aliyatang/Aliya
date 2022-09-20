@@ -71,7 +71,7 @@ Many people started to notice the Psychology and the Good Life Course. It shows 
 
 
 
-Gratitude list - I'm grateful for...
+# Gratitude list - I'm grateful for...
 - My family and friends
 - My cats
 - Being fortunate enough to live in a house with water, heating, ac, etc
