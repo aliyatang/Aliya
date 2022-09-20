@@ -66,4 +66,13 @@ title: Life Video Notes
 
 Many people started to notice the Psychology and the Good Life Course. It shows how everyone, not just Yale students, need to think more broadly about changing the culture of stress and people need to be happier.
     - Online, free version of Psychology and the Good Life Course
-    - Put the above insights into practice 
+    - Put the above insights into practice
+
+
+
+
+Gratitude list - I'm grateful for...
+- My family and friends
+- My cats
+- Being fortunate enough to live in a house with water, heating, ac, etc
+- Being able to go to school and get an education
