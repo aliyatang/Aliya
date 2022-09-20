@@ -45,7 +45,16 @@ permalink: /table/
         <td>
             <a href="https://github.com/aliyatang/Aliya/issues/5">Week 3 Review Ticket</a>
         </td>
-        <td></td>
+        <td>2.8/3.0</td>
+    </tr>
+
+        <tr>
+        <td>4</td>
+        <td>Python Web Server Project</td>
+        <td>
+            <a href="https://github.com/aliyatang/Aliya/issues/6">Week 3 Review Ticket</a>
+        </td>
+        <td>/3.0</td>
     </tr>
 
     
