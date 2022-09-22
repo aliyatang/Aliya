@@ -2,21 +2,21 @@
   
     
         "post0": {
-            "title": "Docker Server",
-            "content": "",
-            "url": "https://aliyatang.github.io/Aliya/markdown/week4/2022/09/19/docker-server.html",
-            "relUrl": "/markdown/week4/2022/09/19/docker-server.html",
-            "date": " • Sep 19, 2022"
+            "title": "Create Preformance Task Project Outline",
+            "content": "Ideas . Online recipe book for baking desserts | Game similar to Wordle | . Recipe Book . Online recipe book for desserts I&#39;ve personally baked | Some recipes to include . Chocolate chip cookies | Smore&#39;s cookies | Exclusive fall section + Other seasons (checks what time of the year): Apple pie | Pumpkin pie | Pumpkin cheescake cookies | Pumpkin cheesecake | Pumpkin cake roll | . | . | Recipe includes: . Ingredients with measuresments | Step-by-step instructions | Tips from my personal experience when baking | Pictures: Ingredients, Process, Finished Products | Link to original recipe | Video from original recipe (if there is a video) | . | Things to implement: . Browse recipe option | Search recipes in catalog | Change serving size/measurements proportionally | . | Note that I need to know how to implement these things: . Search option from user input | Find time of the year (for season) | . | . Wordle Game . Product similar to online game &quot;Wordle&quot; | Normal mode: Unknown five letter word | Six guesses | Each guess: Letters that are in the word and in the correct placement appear green | Letters that are in the word but not in the correct space appear blue | Letters that are not in the word at all appear grey | . | . | Change the mode: Change the number of letters in the words | Change number of guesses allowed | Specific genre of words | Set time limit | . | Things to implement: Clear words/start over | Hint: Gives you letters that are or aren&#39;t in the words, reveals a letter, etc | Statistics after each game or after every 5/10/etc games | . | Note that I need to know how to implement these things: Working keyboard | Designed webpage | User input for submitted word | Possible: Animations when submitting a word | . | . Resources . APCSP Course Website - Look through past posts | Google Search: Khan Academy | Stack Overflow | GeeksforGeeks | . | .",
+            "url": "https://aliyatang.github.io/Aliya/markdown/week3/2022/09/21/CreateTaskOutline.html",
+            "relUrl": "/markdown/week3/2022/09/21/CreateTaskOutline.html",
+            "date": " • Sep 21, 2022"
         }
         
     
   
     
         ,"post1": {
-            "title": "Create Preformance Task Project Outline",
-            "content": "Ideas . Online recipe book for baking desserts | Game similar to Wordle | . Recipe Book . Online recipe book for desserts I&#39;ve personally baked | Some recipes to include . Chocolate chip cookies | Smore&#39;s cookies | Exclusive fall section + Other seasons (checks what time of the year): Apple pie | Pumpkin pie | Pumpkin cheescake cookies | Pumpkin cheesecake | Pumpkin cake roll | . | . | Recipe includes: . Ingredients with measuresments | Step-by-step instructions | Tips from my personal experience when baking | Pictures: Ingredients, Process, Finished Products | Link to original recipe | Video from original recipe (if there is a video) | . | Things to implement: . Browse recipe option | Search recipes in catalog | Change serving size/measurements proportionally | . | Note that I need to know how to implement these things: . Search option from user input | Find time of the year (for season) | . | . Wordle Game . Product similar to online game &quot;Wordle&quot; | Normal mode: Unknown five letter word | Six guesses | Each guess: Letters that are in the word and in the correct placement appear green | Letters that are in the word but not in the correct space appear blue | Letters that are not in the word at all appear grey | . | . | Change the mode: Change the number of letters in the words | Change number of guesses allowed | Specific genre of words | Set time limit | . | Things to implement: Clear words/start over | Hint: Gives you letters that are or aren&#39;t in the words, reveals a letter, etc | Statistics after each game or after every 5/10/etc games | . | Note that I need to know how to implement these things: Working keyboard | Designed webpage | User input for submitted word | Possible: Animations when submitting a word | . | . Resources . APCSP Course Website - Look through past posts | Google Search: Khan Academy | Stack Overflow | GeeksforGeeks | . | .",
-            "url": "https://aliyatang.github.io/Aliya/markdown/week3/2022/09/19/CreateTaskOutline.html",
-            "relUrl": "/markdown/week3/2022/09/19/CreateTaskOutline.html",
+            "title": "Docker Server",
+            "content": "",
+            "url": "https://aliyatang.github.io/Aliya/markdown/week4/2022/09/19/docker-server.html",
+            "relUrl": "/markdown/week4/2022/09/19/docker-server.html",
             "date": " • Sep 19, 2022"
         }
         
@@ -204,7 +204,7 @@
   
       ,"page7": {
           "title": "Table",
-          "content": "Week Sprint Review Ticket Grade . 0 | Tool Setup | Week 0 Review Ticket | 3.0/3.0 | . 1 | Intro to Python | Week 1 Review Ticket | 2.9/3.0 | . 2 | Data Abstraction | Week 2 Review Ticket | 2.9/3.0 | . 3 | Intro to Python | Week 3 Review Ticket | 2.8/3.0 | . 4 | Python Web Server Project | Week 3 Review Ticket | /3.0 | .",
+          "content": "Week Sprint Review Ticket Grade . 0 | Tool Setup | Week 0 Review Ticket | 3.0/3.0 | . 1 | Intro to Python | Week 1 Review Ticket | 2.9/3.0 | . 2 | Data Abstraction | Week 2 Review Ticket | 2.9/3.0 | . 3 | Intro to Python | Week 3 Review Ticket | 2.8/3.0 | . 4 | Python Web Server Project | Week 4 Review Ticket | 2.9/3.0 | . 5 | UI Starters | Week 5 Review Ticket | /3.0 | .",
           "url": "https://aliyatang.github.io/Aliya/table/",
           "relUrl": "/table/",
           "date": ""
