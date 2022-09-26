@@ -3,7 +3,6 @@ layout: page
 title: JavaScript
 permalink: /JavaScript/
 ---
-# JavaScript
 
 Jupyter Notebook that shows personal usage of Jupyter JavaScript kernel
 [link]()
