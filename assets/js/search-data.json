@@ -193,6 +193,17 @@
 
   
       ,"page1": {
+          "title": "JavaScript",
+          "content": "JavaScript . Jupyter Notebook that shows personal usage of Jupyter JavaScript kernel link . Post that uses HTML fragments and JavaScript data to build a table link .",
+          "url": "https://aliyatang.github.io/Aliya/JavaScript/",
+          "relUrl": "/JavaScript/",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page2": {
           "title": "About Me",
           "content": "This website is powered by fastpages 1. . Hi, I’m Aliya! I’m a 10th grader at Del Norte High School . Fun Facts About Me: . I have two cats, Apollo and Luca | I love watermelon, it’s my favorite fruit! | Some of my hobbies include: painting, drawing, cooking | . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
           "url": "https://aliyatang.github.io/Aliya/about/",
@@ -205,7 +216,7 @@
   
 
   
-      ,"page3": {
+      ,"page4": {
           "title": "Notes",
           "content": "Bash Commands: . ls - list directory . pwd - show current directory . cd - change directory . Vocab: . push - to send code to and from GitHub . pull - to receive code from Github . print - input that prints a specific method on the screen . def - defining a function or method . if statement - used for conditional execution . variable - word used as a container to hold information . string - a series of characters . boolean - value that is either true or false .",
           "url": "https://aliyatang.github.io/Aliya/notes/",
@@ -224,7 +235,7 @@
   
 
   
-      ,"page7": {
+      ,"page8": {
           "title": "Table",
           "content": "Week Sprint Review Ticket Grade . 0 | Tool Setup | Week 0 Review Ticket | 3.0/3.0 | . 1 | Intro to Python | Week 1 Review Ticket | 2.9/3.0 | . 2 | Data Abstraction | Week 2 Review Ticket | 2.9/3.0 | . 3 | Intro to Python | Week 3 Review Ticket | 2.8/3.0 | . 4 | Python Web Server Project | Week 4 Review Ticket | 2.9/3.0 | . 5 | UI Starters | Week 5 Review Ticket | /3.0 | .",
           "url": "https://aliyatang.github.io/Aliya/table/",
@@ -248,7 +259,7 @@
   
 
   
-      ,"page13": {
+      ,"page14": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://aliyatang.github.io/Aliya/robots.txt",
