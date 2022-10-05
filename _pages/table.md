@@ -69,7 +69,7 @@ permalink: /table/
         <td>6</td>
         <td>Deployment</td>
         <td>
-            <a href="">Week 6 Review Ticket</a>
+            <a href="https://github.com/aliyatang/Aliya/issues/9">Week 6 Review Ticket</a>
         </td>
         <td>/3.0</td>
     </tr>
