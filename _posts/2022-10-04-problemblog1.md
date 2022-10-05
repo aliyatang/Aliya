@@ -29,6 +29,8 @@ I tried to change the type, as it said that a volume with the same name uses a t
 
 This worked. It let me run 'sudo docker-compose up -d' and my webpage was recreated. 
 
+![This is an image]()
+
 I could also finally verify that my webpage is running with the curl command, "curl http://localhost:8086 | html2text", as it wasn't working before either. 
 
 ![This is an image]()
