@@ -40,15 +40,15 @@ I was also able to make a change and see the change made in the brower.
 
 Before Change:
 
-![This is an image]()
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/10-5-22-Screenshot1.png?raw=true)
 
 Change:
 
-![This is an image]()
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/10-5-22-Screenshot2.png?raw=true)
 
 After Change:
 
-![This is an image]()
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/10-5-22-Screenshot3.png?raw=true)
 
 Lastly, I was able to use a Domain Name Server(DNS) provider to map my own public IP address to a domain, called "aliyaflask.tk" or "www.aliyaflask.tk".
 Here is the link:
