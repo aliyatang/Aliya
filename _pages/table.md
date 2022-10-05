@@ -71,7 +71,7 @@ permalink: /table/
         <td>
             <a href="https://github.com/aliyatang/Aliya/issues/9">Week 6 Review Ticket</a>
         </td>
-        <td>/3.0</td>
+        <td>3.0/3.0 + seed point</td>
     </tr>
 
     
