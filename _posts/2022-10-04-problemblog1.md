@@ -53,6 +53,6 @@ After Change:
 Lastly, I was able to use a Domain Name Server(DNS) provider to map my own public IP address to a domain, called "aliyaflask.tk" or "www.aliyaflask.tk".
 Here is the link:
 
-[Click Here!] (aliyaflask.tk)
+[Click Here!](aliyaflask.tk)
 
 
