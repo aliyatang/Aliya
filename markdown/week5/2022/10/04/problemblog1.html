@@ -4,21 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Problem Blog 1 | Aliya’s Blog ✧/ᐠ-ꞈ-ᐟ\</title>
+<title>AWS Deployment Process | Aliya’s Blog ✧/ᐠ-ꞈ-ᐟ\</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Problem Blog 1" />
+<meta property="og:title" content="AWS Deployment Process" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Problems I ran into during Flask/Python Deployment" />
-<meta property="og:description" content="Problems I ran into during Flask/Python Deployment" />
+<meta name="description" content="Curl output and problems I ran into" />
+<meta property="og:description" content="Curl output and problems I ran into" />
 <link rel="canonical" href="https://aliyatang.github.io/Aliya/markdown/week5/2022/10/04/problemblog1.html" />
 <meta property="og:url" content="https://aliyatang.github.io/Aliya/markdown/week5/2022/10/04/problemblog1.html" />
 <meta property="og:site_name" content="Aliya’s Blog ✧/ᐠ-ꞈ-ᐟ\" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-10-04T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Problem Blog 1" />
+<meta property="twitter:title" content="AWS Deployment Process" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-04T00:00:00-05:00","datePublished":"2022-10-04T00:00:00-05:00","description":"Problems I ran into during Flask/Python Deployment","headline":"Problem Blog 1","mainEntityOfPage":{"@type":"WebPage","@id":"https://aliyatang.github.io/Aliya/markdown/week5/2022/10/04/problemblog1.html"},"url":"https://aliyatang.github.io/Aliya/markdown/week5/2022/10/04/problemblog1.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-04T00:00:00-05:00","datePublished":"2022-10-04T00:00:00-05:00","description":"Curl output and problems I ran into","headline":"AWS Deployment Process","mainEntityOfPage":{"@type":"WebPage","@id":"https://aliyatang.github.io/Aliya/markdown/week5/2022/10/04/problemblog1.html"},"url":"https://aliyatang.github.io/Aliya/markdown/week5/2022/10/04/problemblog1.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/Aliya/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://aliyatang.github.io/Aliya/feed.xml" title="Aliya's Blog ✧/ᐠ-ꞈ-ᐟ\" /><link rel="shortcut icon" type="image/x-icon" href="/Aliya/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -73,7 +73,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Problem Blog 1</h1><p class="page-description">Problems I ran into during Flask/Python Deployment</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-04T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">AWS Deployment Process</h1><p class="page-description">Curl output and problems I ran into</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-04T00:00:00-05:00" itemprop="datePublished">
         Oct 4, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -110,6 +110,31 @@ window.onload = wrap_img;
   <li>Delete the volume</li>
   <li>Change the none type to another type</li>
 </ul>
+
+<p>First, I tried to delete the volume. However, it said that the volume was in use and I couldn’t delete it.</p>
+
+<p><img src="" alt="This is an image"></p>
+
+<p>I couldn’t figure out why it was doing this, as the volume wasn’t in use.</p>
+
+<p>I tried to change the type, as it said that a volume with the same name uses a type that is different than none - “bind”. So next, I changed the type to a different type, “bind”.</p>
+
+<p><img src="" alt="This is an image"></p>
+
+<p>This worked. It let me run ‘sudo docker-compose up -d’ and my webpage was recreated.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>I could also finally verify that my webpage is running with the curl command, “curl http://localhost:8086</td>
+      <td>html2text”, as it wasn’t working before either.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="" alt="This is an image">
+<img src="" alt="This is an image"></p>
+
 
   </div><a class="u-url" href="/Aliya/markdown/week5/2022/10/04/problemblog1.html" hidden></a>
 </article>
