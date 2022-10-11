@@ -270,10 +270,10 @@
 
   
       ,"page1": {
-          "title": "JavaScript",
-          "content": "Jupyter Notebook that shows personal usage of Jupyter JavaScript kernel link . Post that uses HTML fragments and JavaScript data to build a table link .",
-          "url": "https://aliyatang.github.io/Aliya/JavaScript/",
-          "relUrl": "/JavaScript/",
+          "title": "Submenu",
+          "content": "Jupyter Notebook that shows personal usage of Jupyter JavaScript kernel link . Post that uses HTML fragments and JavaScript data to build a table link . Example of Implementing API link .",
+          "url": "https://aliyatang.github.io/Aliya/Submenu/",
+          "relUrl": "/Submenu/",
           "date": ""
       }
       
