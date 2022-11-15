@@ -52,7 +52,7 @@ https://twitter.com/NighthawkCoding
 “}
     - { platform: youtube, user_url: ”
 https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q
-“}s
+“}
 
 # Set this to true to get LaTeX math equation support
 use_math: 
