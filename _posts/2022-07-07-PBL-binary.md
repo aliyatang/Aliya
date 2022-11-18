@@ -36,7 +36,7 @@ tags: [html, liquid, javascript]
                 <td id="octal">0</td>
                 <td id="hexadecimal">0</td>
                 <td id="decimal">0</td>
-                <td id="demo">0</td>
+                <td id="ascii">0</td>
                 <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
             </tr>
             </table>
@@ -89,7 +89,7 @@ tags: [html, liquid, javascript]
         // Decimal conversion
         document.getElementById('decimal').innerHTML = parseInt(binary, 2).toString();
         //ASCII conversion
-        document.getElementById("demo").innerHTML = String.fromCharCode(parseInt(binary, 2).toString());
+        document.getElementById("ascii").innerHTML = String.fromCharCode(parseInt(binary, 2).toString());
     }
 
     //
