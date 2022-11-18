@@ -13,7 +13,7 @@ Python in python cell incorporated into Jupyter Notebook
 Python code and output of code printed on the fastpages blog site
 
 ## Python API in Jupyter Notebook
-![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2022-11-18-pic3.png?raw=true)
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2022-11-18-pic9.png?raw=true)
 API from RapidAPI written in python, prints weather API response
 
 ![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2022-11-18-pic4.png?raw=true)
