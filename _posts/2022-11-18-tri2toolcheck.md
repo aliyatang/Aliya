@@ -24,18 +24,18 @@ Python API code and output printed on the fastpages blog site
 Python and Anaconda installed
 
 ## Javascript Code
-![This is an image]()
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2022-11-18-pic7.png?raw=true)
 Javasript written in notebook with code running
 
-![This is an image]()
-Javasscript code and output printed on the fastpages blog site
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2022-11-18-pic8.png?raw=true)
+Javascript code and output printed on the fastpages blog site
 
 ## Make Server
-![This is an image]()
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2022-11-18-makeserver1.png?raw=true)
 Running make server command in terminal
 
-![This is an image]()
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2022-11-18-makeserver2.png?raw=true)
 Server created
 
-![This is an image]()
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2022-11-18-makeserver3.png?raw=true)
 Use server for an easy and fast way to see changes on the site without making commits
