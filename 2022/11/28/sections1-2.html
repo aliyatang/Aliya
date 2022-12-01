@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -224,11 +224,28 @@ window.onload = wrap_img;
      <span class="p">),</span>
 <span class="p">]</span>
 
-<span class="n">album_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose and album 1-4&quot;</span><span class="p">))</span>
-<span class="n">song_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+
+<span class="n">album_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose an album 1-4:&quot;</span><span class="p">))</span>
+<span class="n">song_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose a song 1-?:&quot;</span><span class="p">))</span>
+       
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Playing &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">albums</span><span class="p">[</span><span class="n">album_num</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">][</span><span class="n">song_num</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; from Album &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">albums</span><span class="p">[</span><span class="n">album_num</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; by Artist &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">albums</span><span class="p">[</span><span class="n">album_num</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; in &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">albums</span><span class="p">[</span><span class="n">album_num</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Playing Ready for Love from Album Bad Company by Artist Bad Company in 1974
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
