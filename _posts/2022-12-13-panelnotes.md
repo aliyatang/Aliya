@@ -1,7 +1,7 @@
 ---
 toc: true
 layout: post
-description: Notes for Girls in CS Panel 12/13
+description: Notes and Takeaways for Girls in CS Panel 12/13
 categories: [markdown, week16]
 title: Girls in CS Panel 
 ---
