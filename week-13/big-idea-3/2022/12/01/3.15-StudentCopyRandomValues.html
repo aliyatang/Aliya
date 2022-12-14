@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -355,10 +355,99 @@ Dice Roll</p>
 </h2>
 <p>Given a random decimal number convert it into binary
 as Extra convert it to hexidecimal as well.</p>
+<p>Extra: I did a decimal to octal converter too</p>
 
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+
+<span class="c1">## Decimal to Binary</span>
+<span class="n">numsBin</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">def</span> <span class="nf">convertBin</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">x</span><span class="o">/</span><span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">rem</span> <span class="o">=</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span>
+        <span class="n">numsBin</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rem</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">numsBin</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="n">binary</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numsBin</span><span class="p">:</span>
+        <span class="n">binary</span> <span class="o">=</span> <span class="n">binary</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">binary</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" to binary: "</span> <span class="o">+</span> <span class="n">convertBin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1">## Decimal to Hex</span>
+<span class="n">numsHex</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s1">'0'</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="s1">'1'</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s1">'2'</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="s1">'3'</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span><span class="s1">'4'</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span><span class="s1">'5'</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span><span class="s1">'6'</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span><span class="s1">'7'</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span><span class="s1">'8'</span><span class="p">,</span> <span class="mi">9</span><span class="p">:</span><span class="s1">'9'</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span><span class="s1">'A'</span><span class="p">,</span> <span class="mi">11</span><span class="p">:</span><span class="s1">'B'</span><span class="p">,</span> <span class="mi">12</span><span class="p">:</span><span class="s1">'C'</span><span class="p">,</span> <span class="mi">13</span><span class="p">:</span><span class="s1">'D'</span><span class="p">,</span> <span class="mi">14</span><span class="p">:</span><span class="s1">'E'</span><span class="p">,</span> <span class="mi">15</span><span class="p">:</span><span class="s1">'F'</span><span class="p">}</span>
+<span class="k">def</span> <span class="nf">convertHex</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">x</span><span class="o">/</span><span class="mi">16</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">rem</span> <span class="o">=</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">16</span>
+        <span class="n">numsHex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dict</span><span class="p">[</span><span class="n">rem</span><span class="p">])</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">numsHex</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="nb">hex</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numsHex</span><span class="p">:</span>
+        <span class="nb">hex</span> <span class="o">=</span> <span class="nb">hex</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">hex</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" to hexidecimal: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">convertHex</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+
+
+<span class="c1">## Decimal to Octal</span>
+<span class="n">numsOct</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">def</span> <span class="nf">convertOct</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="n">octal</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="k">return</span> <span class="n">octal</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">while</span> <span class="n">x</span><span class="o">/</span><span class="mi">8</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">rem</span> <span class="o">=</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">8</span>
+            <span class="n">numsOct</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rem</span><span class="p">)</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span>
+        <span class="n">numsOct</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+        <span class="n">octal</span> <span class="o">=</span> <span class="s2">" "</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numsOct</span><span class="p">:</span>
+            <span class="n">octal</span> <span class="o">=</span> <span class="n">octal</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">octal</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" to octal: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">convertOct</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>243 to binary: 11110011
+243 to hexidecimal: F3
+243 to octal:  363
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
