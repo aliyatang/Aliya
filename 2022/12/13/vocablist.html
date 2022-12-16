@@ -119,15 +119,11 @@ window.onload = wrap_img;
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#Unit-2…-Binary/Data-Terms">Unit 2… Binary/Data Terms </a></li>
 <li class="toc-entry toc-h2"><a href="#Unit-3…-Algorithm/Programming-Terms">Unit 3… Algorithm/Programming Terms </a></li>
-<li class="toc-entry toc-h2"><a href="#Unit-2---Binary/Data-Terms">Unit 2 - Binary/Data Terms </a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#Bits">Bits </a></li>
-<li class="toc-entry toc-h3"><a href="#Bytes">Bytes </a></li>
-</ul>
-</li>
+<li class="toc-entry toc-h2"><a href="#Unit-2---Binary/Data-Terms">Unit 2 - Binary/Data Terms </a></li>
 <li class="toc-entry toc-h2"><a href="#Unit-3---Algorithm/Programming-Terms">Unit 3 - Algorithm/Programming Terms </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Variables">Variables </a></li>
+<li class="toc-entry toc-h3"><a href="#Data-Types">Data Types </a></li>
 </ul>
 </li>
 </ul><!--
@@ -177,25 +173,18 @@ Procedural Abstraction, Python Def procedures, Parameters, Return Values</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Bits">
-<a class="anchor" href="#Bits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bits<a class="anchor-link" href="#Bits"> </a>
-</h3>
 <ul>
-<li>short for "binary digits"</li>
-<li>computers store information as bits</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Bytes">
-<a class="anchor" href="#Bytes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bytes<a class="anchor-link" href="#Bytes"> </a>
-</h3>
-<ul>
-<li>8-bit unit, unit of data that is eight binary digits long</li>
+<li>Bits: binary digits, smallest unit of data processed by a computer (1 or 0, true or false)</li>
+<li>Bytes: 8-bit unit, unit of data that is eight binary digits(bits) long</li>
+<li>Hexadecimal: Numbering system with base 16, digit values from 0-9 then A-F</li>
+<li>Nibbles: Four binary digits(bits), half of a byte</li>
+<li>Binary numbers: Numbers expressed in base 2 numeral system, digit values 0-1</li>
+<li>Unsigned Integer: 32-bit encoding non negative integers, integers with no + or - sign associated with them, range of [0 to 4294967295]</li>
+<li>Signed Integer: 32-bit including negative integers, range of [-2147483648 to 2147483647]</li>
+<li>Floating Point: Number with decimal point "."</li>
+<li>Binary Data Abstractions: 
+Boolean, ASCII, Unicode, RGB
+Data Compression: Lossy, Lossless (note discussed yet)</li>
 </ul>
 
 </div>
@@ -254,6 +243,54 @@ Aliya
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Data-Types">
+<a class="anchor" href="#Data-Types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Types<a class="anchor-link" href="#Data-Types"> </a>
+</h3>
+<ul>
+<li>classifaction or categorization of data items</li>
+<li>example of main data types below:</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># int</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">35.75</span> <span class="c1"># float</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span> <span class="c1"># complex</span>
+
+<span class="c1"># Boolean</span>
+<span class="n">d</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">e</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Set</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
+
+<span class="c1"># Dict</span>
+<span class="n">g</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s1">'a'</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s1">'b'</span><span class="p">}</span>
+
+<span class="c1"># Sequence</span>
+<span class="n">h</span> <span class="o">=</span> <span class="s2">"Aliya"</span> <span class="c1"># string</span>
+<span class="n">i</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="mf">5.7</span><span class="p">]</span> <span class="c1"># list</span>
+<span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">)</span> <span class="c1"># tuple</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 

@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      14 min read
     
 </span></p>
 
@@ -425,6 +425,7 @@ Makayla is a Zombie
 <ul>
 <li>create your own simulation involving a dice roll</li>
 <li>should include randomization and a function for rolling + multiple trials</li>
+<li>Extra: Roll a random number of times, and function to see which number is the most frequently rolled </li>
 </ul>
 
 </div>
@@ -441,20 +442,37 @@ Makayla is a Zombie
 
 <span class="k">def</span> <span class="nf">diceroll</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
-    <span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
         <span class="n">num</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
         <span class="n">results</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">num</span>
         <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">results</span>
+    <span class="k">return</span> <span class="n">results</span><span class="p">,</span> <span class="n">values</span>
 
-<span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"roll "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" times"</span><span class="p">)</span>
-<span class="n">mydices</span> <span class="o">=</span> <span class="n">diceroll</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">mydices</span> <span class="o">=</span> <span class="n">diceroll</span><span class="p">(</span><span class="n">n</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"roll #"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mydices</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mydices</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+
+<span class="n">values</span> <span class="o">=</span> <span class="n">diceroll</span><span class="p">(</span><span class="n">n</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">frequent</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+        <span class="n">curr_frequency</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">curr_frequency</span> <span class="o">&gt;</span> <span class="n">counter</span><span class="p">):</span>
+            <span class="n">counter</span> <span class="o">=</span> <span class="n">curr_frequency</span>
+            <span class="n">num</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">num</span><span class="p">,</span> <span class="n">curr_frequency</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"You rolled the side "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">frequent</span><span class="p">(</span><span class="n">values</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="s2">" most frequently, "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">frequent</span><span class="p">(</span><span class="n">values</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">" times."</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -467,15 +485,16 @@ Makayla is a Zombie
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>roll 8 times
-roll #1 is 2
-roll #2 is 5
-roll #3 is 4
-roll #4 is 3
-roll #5 is 4
+<pre>roll 7 times
+roll #1 is 4
+roll #2 is 6
+roll #3 is 1
+roll #4 is 6
+roll #5 is 1
 roll #6 is 4
-roll #7 is 1
-roll #8 is 4
+roll #7 is 6
+[4, 6, 1, 6, 1, 4, 6]
+You rolled the side 6 most frequently, 3 times.
 </pre>
 </div>
 </div>
@@ -556,19 +575,114 @@ roll #8 is 4
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">questions</span> <span class="o">=</span> <span class="mi">6</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="c1">#used to randomize the questions</span>
+
+<span class="n">q1</span><span class="o">=</span><span class="p">{</span><span class="s2">"q"</span><span class="p">:</span> <span class="s2">"A researcher gathers data about the effect of Advanced Placement®︎ classes on students' success in college and career, and develops a simulation to show how a sequence of AP classes affect a hypothetical student's pathway. Several school administrators are concerned that the simulation contains bias favoring high-income students, however.</span><span class="se">\n</span><span class="s2">a) The simulation is an abstraction and therefore cannot contain any bias.</span><span class="se">\n</span><span class="s2">b) The simulation may accidentally contain bias due to the exclusion of details.</span><span class="se">\n</span><span class="s2">c) If the simulation is found to contain bias, then it is not possible to remove the bias from the simulation.</span><span class="se">\n</span><span class="s2">d) The only way for the simulation to be biased is if the researcher intentionally used data that favored their desired output."</span><span class="p">,</span>
+<span class="s2">"answer"</span> <span class="p">:</span> <span class="s2">"b"</span><span class="p">}</span>
+<span class="n">q2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"q"</span><span class="p">:</span> <span class="s2">"Jack is trying to plan his financial future using an online tool. The tool starts off by asking him to input details about his current finances and career. It then lets him choose different future scenarios, such as having children. For each scenario chosen, the tool does some calculations and outputs his projected savings at the ages of 35, 45, and 55. Would that be considered a simulation and why?</span><span class="se">\n</span><span class="s2">a) No, it's not a simulation because it does not include a visualization of the results.</span><span class="se">\n</span><span class="s2">b}: No, it's not a simulation because it does not include all the details of his life history and the future financial environment.</span><span class="se">\n</span><span class="s2">c) Yes, it's a simulation because it runs on a computer and includes both user input and computed output.</span><span class="se">\n</span><span class="s2">d) Yes, it's a simulation because it is an abstraction of a real world scenario that enables the drawing of inferences."</span><span class="p">,</span>
+<span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"d"</span><span class="p">}</span>
+
+<span class="n">q3</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"q"</span><span class="p">:</span> <span class="s2">"Sylvia is an industrial engineer working for a sporting goods company. She is developing a baseball bat that can hit balls with higher accuracy and asks their software engineering team to develop a simulation to verify the design.Which of the following details is most important to include in this simulation?</span><span class="se">\n</span><span class="s2">a) Realistic sound effects based on the material of the baseball bat and the velocity of the hit</span><span class="se">\n</span><span class="s2">b)A depiction of an audience in the stands with lifelike behavior in response to hit accuracy</span><span class="se">\n</span><span class="s2">c)Accurate accounting for the effects of wind conditions on the movement of the ball</span><span class="se">\n</span><span class="s2">d)A baseball field that is textured to differentiate between the grass and the dirt"</span><span class="p">,</span> 
+<span class="s2">"answer"</span><span class="p">:</span><span class="s2">"c"</span><span class="p">}</span>
+
+<span class="n">q4</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"q"</span><span class="p">:</span> <span class="s2">"Ashlynn is an industrial engineer who is trying to design a safer parachute. She creates a computer simulation of the parachute opening at different heights and in different environmental conditions.What are advantages of running the simulation versus an actual experiment?</span><span class="se">\n</span><span class="s2">a) The simulation will not contain any bias that favors one body type over another, while an experiment will be biased.</span><span class="se">\n</span><span class="s2">b)The simulation can be run more safely than an actual experiment</span><span class="se">\n</span><span class="s2">c)The simulation will accurately predict the parachute's safety level, while an experiment may be inaccurate due to faulty experimental design.</span><span class="se">\n</span><span class="s2">d)The simulation can test the parachute design in a wide range of environmental conditions that may be difficult to reliably reproduce in an experiment."</span><span class="p">,</span>
+<span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"d"</span><span class="p">}</span>
+
+<span class="n">q5</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"q"</span><span class="p">:</span> <span class="s2">"What does random.random() do?</span><span class="se">\n</span><span class="s2">a)generate a random float between 0.0 to 1</span><span class="se">\n</span><span class="s2">b)randomly selects an integer from given range</span><span class="se">\n</span><span class="s2">c)returns random value from list</span><span class="se">\n</span><span class="s2">d)returns a randomly selected element from the specified sequence"</span><span class="p">,</span> <span class="s2">"answer"</span><span class="p">:</span><span class="s2">"a"</span><span class="p">}</span>
+<span class="n">q6</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"q"</span><span class="p">:</span> <span class="s2">"What does random.choice() do?</span><span class="se">\n</span><span class="s2">areturns a randomly selected element from the specified sequence</span><span class="se">\n</span><span class="s2">b)returns random value from list</span><span class="se">\n</span><span class="s2">c)randomly selects an integer from given range</span><span class="se">\n</span><span class="s2">d)generate a random float between 0.0 to 1"</span><span class="p">,</span> <span class="s2">"answer"</span><span class="p">:</span><span class="s2">"a"</span><span class="p">}</span>
+
+<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="n">q3</span><span class="p">,</span> <span class="n">q4</span><span class="p">,</span> <span class="n">q5</span><span class="p">,</span> <span class="n">q6</span><span class="p">]</span>
+ 
+<span class="c1">#main program </span>
+<span class="c1"># loop the quiz</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>    <span class="c1"># generate a randome number of questions to ask</span>
+<span class="n">total_qnum</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># loop index</span>
 <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">questionAsked</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+   
+   <span class="n">qindex</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">total_qnum</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+   
+   <span class="k">if</span> <span class="n">qindex</span> <span class="ow">in</span> <span class="n">questionAsked</span><span class="p">:</span>  <span class="c1"># questions has already been asked</span>
+       <span class="c1">#print("This question has been asked")</span>
+      <span class="k">continue</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">------Question # "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">"-------</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>       
+   <span class="n">questionAsked</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">qindex</span><span class="p">)</span>
+   
+   <span class="nb">print</span><span class="p">(</span><span class="n">questions</span><span class="p">[</span><span class="n">qindex</span><span class="p">][</span><span class="s2">"q"</span><span class="p">])</span>
+   <span class="n">youranswer</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Please choose: a, b, c or d</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+   
+   <span class="k">if</span> <span class="n">youranswer</span> <span class="o">==</span> <span class="n">questions</span><span class="p">[</span><span class="n">qindex</span><span class="p">][</span><span class="s2">"answer"</span><span class="p">]:</span>
+      <span class="n">correct</span> <span class="o">+=</span><span class="mi">1</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Good job! Answer "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">youranswer</span><span class="p">)</span><span class="o">+</span><span class="s2">" is correct</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Sorry! Answer "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">youranswer</span><span class="p">)</span><span class="o">+</span><span class="s2">" is NOT correct</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+   <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
 
-<span class="k">def</span> <span class="nf">quizquestion</span><span class="p">():</span>
-    
-
-
-
-
-<span class="nb">print</span><span class="p">(</span> <span class="s2">" you scored "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">correct</span><span class="p">)</span> <span class="o">+</span><span class="s2">"/"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">questions</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">"You scored "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">correct</span><span class="p">)</span> <span class="o">+</span><span class="s2">" out of "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span><span class="s2">" questions"</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+------Question # 1-------
+
+What does random.random() do?
+a)generate a random float between 0.0 to 1
+b)randomly selects an integer from given range
+c)returns random value from list
+d)returns a randomly selected element from the specified sequence
+
+Sorry! Answer b is NOT correct
+
+
+------Question # 2-------
+
+Ashlynn is an industrial engineer who is trying to design a safer parachute. She creates a computer simulation of the parachute opening at different heights and in different environmental conditions.What are advantages of running the simulation versus an actual experiment?
+a) The simulation will not contain any bias that favors one body type over another, while an experiment will be biased.
+b)The simulation can be run more safely than an actual experiment
+c)The simulation will accurately predict the parachute's safety level, while an experiment may be inaccurate due to faulty experimental design.
+d)The simulation can test the parachute design in a wide range of environmental conditions that may be difficult to reliably reproduce in an experiment.
+
+Good job! Answer d is correct
+
+
+------Question # 3-------
+
+What does random.choice() do?
+areturns a randomly selected element from the specified sequence
+b)returns random value from list
+c)randomly selects an integer from given range
+d)generate a random float between 0.0 to 1
+
+Sorry! Answer d is NOT correct
+
+
+------Question # 4-------
+
+Jack is trying to plan his financial future using an online tool. The tool starts off by asking him to input details about his current finances and career. It then lets him choose different future scenarios, such as having children. For each scenario chosen, the tool does some calculations and outputs his projected savings at the ages of 35, 45, and 55. Would that be considered a simulation and why?
+a) No, it's not a simulation because it does not include a visualization of the results.
+b}: No, it's not a simulation because it does not include all the details of his life history and the future financial environment.
+c) Yes, it's a simulation because it runs on a computer and includes both user input and computed output.
+d) Yes, it's a simulation because it is an abstraction of a real world scenario that enables the drawing of inferences.
+
+Good job! Answer d is correct
+
+You scored 2 out of 4 questions
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -594,6 +708,52 @@ Be creative! Think about instances in your own life, science, puzzles that can b
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Factorial</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">findFact</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">i</span>
+        <span class="k">return</span> <span class="n">f</span>
+
+<span class="k">def</span> <span class="nf">factorial</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Enter a Number: "</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="n">ob</span> <span class="o">=</span> <span class="n">Factorial</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Factorial of"</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="s2">"="</span><span class="p">,</span> <span class="n">ob</span><span class="o">.</span><span class="n">findFact</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">factorial</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Enter a Number: 
+Factorial of 14 = 87178291200
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
