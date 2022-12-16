@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -429,7 +429,7 @@ Fully programmed solution will improve your grade, at a minimum show that you tr
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Heuristic Approach</p>
+<p>My thought process for this was to make a route based on the shortest time of each location. So for example at each stop, you would see which would be the next closest and go to there.</p>
 
 </div>
 </div>
@@ -446,22 +446,25 @@ Fully programmed solution will improve your grade, at a minimum show that you tr
     <span class="n">order</span> <span class="o">=</span> <span class="p">[</span><span class="n">start</span><span class="p">]</span>
     <span class="n">curr</span> <span class="o">=</span> <span class="n">start</span>
     <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
-        <span class="n">min_dist</span> <span class="o">=</span> <span class="mi">60</span>
-        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">curr</span><span class="p">]:</span>
-            <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">curr</span><span class="p">][</span><span class="n">key</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">min_dist</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">order</span><span class="p">:</span>
-                <span class="nb">next</span> <span class="o">=</span> <span class="n">key</span>
-                <span class="n">min_dist</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">curr</span><span class="p">][</span><span class="n">key</span><span class="p">]</span>
-        <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">next</span><span class="p">)</span>
-        <span class="n">curr</span> <span class="o">=</span> <span class="nb">next</span>
-        <span class="n">drivetime</span><span class="o">+=</span><span class="n">min_dist</span>
-    <span class="n">drivetime</span><span class="o">+=</span><span class="n">data</span><span class="p">[</span><span class="n">curr</span><span class="p">][</span><span class="n">start</span><span class="p">]</span>
+        <span class="n">min_time</span> <span class="o">=</span> <span class="mi">100</span>
+        <span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">curr</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">curr</span><span class="p">][</span><span class="n">loc</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">min_time</span> <span class="ow">and</span> <span class="n">loc</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">order</span><span class="p">:</span>
+                <span class="n">next_loc</span> <span class="o">=</span> <span class="n">loc</span>
+                <span class="n">min_time</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">curr</span><span class="p">][</span><span class="n">loc</span><span class="p">]</span>
+        <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">next_loc</span><span class="p">)</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="n">next_loc</span>
+        <span class="n">drivetime</span> <span class="o">+=</span> <span class="n">min_time</span>
+    <span class="n">drivetime</span> <span class="o">+=</span> <span class="n">data</span><span class="p">[</span><span class="n">curr</span><span class="p">][</span><span class="n">start</span><span class="p">]</span> <span class="c1">#going back to del norte</span>
     <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
-
-    <span class="c1">#CODE,CODE,CODE</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">drivetime</span><span class="p">,</span><span class="n">order</span><span class="p">)</span>
-
+    <span class="k">return</span><span class="p">(</span><span class="n">drivetime</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
+     
 <span class="n">start</span> <span class="o">=</span> <span class="s1">'DelNorte'</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fastestroute</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">dataset</span><span class="p">))</span>
+<span class="n">vals</span> <span class="o">=</span> <span class="n">fastestroute</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">dataset</span><span class="p">)</span>
+<span class="n">min_time</span> <span class="o">=</span> <span class="n">vals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">min_route</span> <span class="o">=</span> <span class="n">vals</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">min_route</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"is the fastest route, and it takes "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">min_time</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" minutes/or other unit of time."</span><span class="p">)</span>
 <span class="c1"># 'dataset' is the name of the nested key value pair</span>
 </pre></div>
 
@@ -475,7 +478,8 @@ Fully programmed solution will improve your grade, at a minimum show that you tr
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(105, ['DelNorte', 'Westview', 'Poway', 'RanchoBernardo', 'MtCarmel', 'DelNorte'])
+<pre>['DelNorte', 'Westview', 'Poway', 'RanchoBernardo', 'MtCarmel', 'DelNorte']
+is the fastest route, and it takes 105 minutes/or other unit of time.
 </pre>
 </div>
 </div>
