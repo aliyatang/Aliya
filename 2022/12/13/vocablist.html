@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      6 min read
     
 </span></p>
 
@@ -443,7 +443,7 @@ Aliya
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># list</span>
 <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a number between 1 and 255:"</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="c1"># function</span>
+<span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="c1"># python def, defining a function</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">:</span> <span class="c1"># if statement, greater than or equal to and less than or equal to comparison operator</span>
         <span class="k">while</span> <span class="n">x</span><span class="o">/</span><span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># while loop</span>
             <span class="n">rem</span> <span class="o">=</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="c1"># mathmatical operator % which finds remainder</span>
@@ -451,7 +451,7 @@ Aliya
             <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
         <span class="n">nums</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
         <span class="n">binary</span> <span class="o">=</span> <span class="s2">" "</span> <span class="c1"># string, it is empty for now</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span> <span class="c1"># iteration for loop</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span> <span class="c1"># for loop with list, iteration for loop</span>
             <span class="n">binary</span> <span class="o">=</span> <span class="n">binary</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># concatenation of strings binary and i</span>
         <span class="k">return</span> <span class="n">binary</span> <span class="c1"># return values out of the function</span>
     <span class="k">else</span><span class="p">:</span> <span class="c1"># else statement for number that is not fit for the code</span>
@@ -517,6 +517,8 @@ Aliya
         <span class="n">vowels</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">cons</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># parametersin this case are vowels and consonants</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Your name has "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">vowels</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" vowels."</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Your name has "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">cons</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" consonants."</span><span class="p">)</span>
 </pre></div>
@@ -538,6 +540,58 @@ Length of orlando: 7
 Your name is 5 letters long.
 Your name has 2 vowels.
 Your name has 3 consonants.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="n">numlist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">19</span><span class="p">]</span>
+<span class="n">valuelist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">21</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">isvalue</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="n">array</span><span class="p">):</span>
+    <span class="n">upper</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># upper value</span>
+    <span class="n">lower</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># lower value</span>
+    <span class="k">while</span> <span class="n">upper</span> <span class="o">&gt;</span> <span class="n">lower</span><span class="p">:</span>
+        <span class="n">middle</span> <span class="o">=</span> <span class="p">(</span><span class="n">lower</span><span class="o">+</span><span class="n">upper</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+        <span class="k">if</span> <span class="n">middle</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">middle</span> <span class="o">&gt;</span> <span class="n">value</span><span class="p">:</span>
+            <span class="n">upper</span> <span class="o">=</span> <span class="n">middle</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lower</span> <span class="o">=</span> <span class="n">middle</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+<span class="n">starttime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">):</span> <span class="c1"># for loop with range, in this case it is for every number until 10000</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">valuelist</span><span class="p">)):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">isvalue</span><span class="p">(</span><span class="n">valuelist</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">numlist</span><span class="p">)</span>
+<span class="n">endtime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">endtime</span><span class="o">-</span><span class="n">starttime</span><span class="p">,</span><span class="s1">'seconds'</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0.4087941646575928 seconds
 </pre>
 </div>
 </div>
