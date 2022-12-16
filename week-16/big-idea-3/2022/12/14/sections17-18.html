@@ -290,13 +290,13 @@ Fully programmed solution will improve your grade, at a minimum show that you tr
 <span class="n">numlist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">19</span><span class="p">]</span>
 <span class="n">valuelist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">21</span><span class="p">]</span>
 <span class="k">def</span> <span class="nf">isvalue</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="n">array</span><span class="p">):</span>
-    <span class="n">upper</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">upper</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">lower</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="n">upper</span> <span class="o">&gt;=</span> <span class="n">lower</span><span class="p">:</span>
-        <span class="n">middle</span> <span class="o">=</span> <span class="p">(</span><span class="n">upper</span> <span class="o">+</span> <span class="n">lower</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-        <span class="k">if</span> <span class="n">array</span><span class="p">[</span><span class="n">middle</span><span class="p">]</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
+    <span class="k">while</span> <span class="n">upper</span> <span class="o">&gt;</span> <span class="n">lower</span><span class="p">:</span>
+        <span class="n">middle</span> <span class="o">=</span> <span class="p">(</span><span class="n">lower</span><span class="o">+</span><span class="n">upper</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+        <span class="k">if</span> <span class="n">middle</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">elif</span> <span class="n">array</span><span class="p">[</span><span class="n">middle</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">value</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">middle</span> <span class="o">&gt;</span> <span class="n">value</span><span class="p">:</span>
             <span class="n">upper</span> <span class="o">=</span> <span class="n">middle</span> <span class="o">-</span> <span class="mi">1</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">lower</span> <span class="o">=</span> <span class="n">middle</span> <span class="o">+</span> <span class="mi">1</span>
@@ -320,7 +320,7 @@ Fully programmed solution will improve your grade, at a minimum show that you tr
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.4740278720855713 seconds
+<pre>0.39867186546325684 seconds
 </pre>
 </div>
 </div>
@@ -335,7 +335,7 @@ Fully programmed solution will improve your grade, at a minimum show that you tr
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Decreased to ~ 0.5 seconds</li>
+<li>Decreased to ~ 0.4 seconds</li>
 <li>This is the binary search method that we were suggested to implement in class</li>
 </ul>
 
@@ -390,31 +390,31 @@ Fully programmed solution will improve your grade, at a minimum show that you tr
         <span class="s1">'Westview'</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span>
         <span class="s1">'MtCarmel'</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
         <span class="s1">'Poway'</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span>
-        <span class="s1">'RanchoBernrdo'</span><span class="p">:</span><span class="mi">50</span>
+        <span class="s1">'RanchoBernardo'</span><span class="p">:</span><span class="mi">50</span>
     <span class="p">},</span>
     <span class="s1">'Westview'</span><span class="p">:{</span>
-        <span class="s1">'Del Norte'</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span>
+        <span class="s1">'DelNorte'</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span>
         <span class="s1">'MtCarmel'</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span>
         <span class="s1">'Poway'</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span>
-        <span class="s1">'RanchoBernrdo'</span><span class="p">:</span> <span class="mi">45</span>
+        <span class="s1">'RanchoBernardo'</span><span class="p">:</span> <span class="mi">45</span>
     <span class="p">},</span>
     <span class="s1">'MtCarmel'</span><span class="p">:{</span>
         <span class="s1">'Westview'</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span>
-        <span class="s1">'Del Norte'</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+        <span class="s1">'DelNorte'</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
         <span class="s1">'Poway'</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span>
-        <span class="s1">'RanchoBernrdo'</span><span class="p">:</span><span class="mi">30</span>
+        <span class="s1">'RanchoBernardo'</span><span class="p">:</span><span class="mi">30</span>
     <span class="p">},</span>
     <span class="s1">'Poway'</span><span class="p">:{</span>
         <span class="s1">'Westview'</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span>
         <span class="s1">'MtCarmel'</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span>
-        <span class="s1">'Del Norte'</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span>
-        <span class="s1">'RanchoBernrdo'</span><span class="p">:</span><span class="mi">15</span>
+        <span class="s1">'DelNorte'</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span>
+        <span class="s1">'RanchoBernardo'</span><span class="p">:</span><span class="mi">15</span>
     <span class="p">},</span>
     <span class="s1">'RanchoBernardo'</span><span class="p">:{</span>
         <span class="s1">'Westview'</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span>
         <span class="s1">'MtCarmel'</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span>
         <span class="s1">'Poway'</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span>
-        <span class="s1">'Del Norte'</span><span class="p">:</span><span class="mi">50</span>
+        <span class="s1">'DelNorte'</span><span class="p">:</span><span class="mi">50</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -426,6 +426,14 @@ Fully programmed solution will improve your grade, at a minimum show that you tr
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Heuristic Approach</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -435,15 +443,43 @@ Fully programmed solution will improve your grade, at a minimum show that you tr
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fastestroute</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
     <span class="n">drivetime</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">order</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">order</span> <span class="o">=</span> <span class="p">[</span><span class="n">start</span><span class="p">]</span>
+    <span class="n">curr</span> <span class="o">=</span> <span class="n">start</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">min_dist</span> <span class="o">=</span> <span class="mi">60</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">curr</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">curr</span><span class="p">][</span><span class="n">key</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">min_dist</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">order</span><span class="p">:</span>
+                <span class="nb">next</span> <span class="o">=</span> <span class="n">key</span>
+                <span class="n">min_dist</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">curr</span><span class="p">][</span><span class="n">key</span><span class="p">]</span>
+        <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">next</span><span class="p">)</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="nb">next</span>
+        <span class="n">drivetime</span><span class="o">+=</span><span class="n">min_dist</span>
+    <span class="n">drivetime</span><span class="o">+=</span><span class="n">data</span><span class="p">[</span><span class="n">curr</span><span class="p">][</span><span class="n">start</span><span class="p">]</span>
+    <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+
     <span class="c1">#CODE,CODE,CODE</span>
     <span class="k">return</span><span class="p">(</span><span class="n">drivetime</span><span class="p">,</span><span class="n">order</span><span class="p">)</span>
 
 <span class="n">start</span> <span class="o">=</span> <span class="s1">'DelNorte'</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fastestroute</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">dataset</span><span class="p">))</span>
 <span class="c1"># 'dataset' is the name of the nested key value pair</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(105, ['DelNorte', 'Westview', 'Poway', 'RanchoBernardo', 'MtCarmel', 'DelNorte'])
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
