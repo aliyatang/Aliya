@@ -441,31 +441,43 @@ Fully programmed solution will improve your grade, at a minimum show that you tr
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fastestroute</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
-    <span class="n">drivetime</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">order</span> <span class="o">=</span> <span class="p">[</span><span class="n">start</span><span class="p">]</span>
-    <span class="n">curr</span> <span class="o">=</span> <span class="n">start</span>
-    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
-        <span class="n">min_time</span> <span class="o">=</span> <span class="mi">100</span>
-        <span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">curr</span><span class="p">]:</span>
-            <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">curr</span><span class="p">][</span><span class="n">loc</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">min_time</span> <span class="ow">and</span> <span class="n">loc</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">order</span><span class="p">:</span>
-                <span class="n">next_loc</span> <span class="o">=</span> <span class="n">loc</span>
-                <span class="n">min_time</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">curr</span><span class="p">][</span><span class="n">loc</span><span class="p">]</span>
-        <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">next_loc</span><span class="p">)</span>
-        <span class="n">curr</span> <span class="o">=</span> <span class="n">next_loc</span>
-        <span class="n">drivetime</span> <span class="o">+=</span> <span class="n">min_time</span>
-    <span class="n">drivetime</span> <span class="o">+=</span> <span class="n">data</span><span class="p">[</span><span class="n">curr</span><span class="p">][</span><span class="n">start</span><span class="p">]</span> <span class="c1">#going back to del norte</span>
-    <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">drivetime</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
-     
-<span class="n">start</span> <span class="o">=</span> <span class="s1">'DelNorte'</span>
-<span class="n">vals</span> <span class="o">=</span> <span class="n">fastestroute</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">dataset</span><span class="p">)</span>
-<span class="n">min_time</span> <span class="o">=</span> <span class="n">vals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">min_route</span> <span class="o">=</span> <span class="n">vals</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># start from the "start" school, recursively go to the next school, until all schools have been passed and reach start0</span>
+<span class="k">def</span> <span class="nf">findBestRoute</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">schools</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">total_time</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">min_total_time</span><span class="p">,</span> <span class="n">best_route</span><span class="p">,</span> <span class="n">route_count</span><span class="p">,</span> <span class="n">start0</span>
+    <span class="k">for</span> <span class="n">loc</span><span class="p">,</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">schools</span><span class="p">[</span><span class="n">start</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">loc</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">route</span><span class="p">:</span>
+            <span class="n">saved_route</span> <span class="o">=</span> <span class="n">route</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>    <span class="c1"># do not use saved_route = route, that is not list copy!!</span>
+            <span class="n">saved_total_time</span> <span class="o">=</span> <span class="n">total_time</span>
+            <span class="n">route</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
+            <span class="n">total_time</span> <span class="o">+=</span> <span class="n">time</span>
+            <span class="c1"># start from the loc, recursively go to the next school, until all schools have been passed and reach start0</span>
+            <span class="n">findBestRoute</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="n">schools</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">total_time</span><span class="p">)</span>
+            <span class="c1"># resume</span>
+            <span class="n">route</span> <span class="o">=</span> <span class="n">saved_route</span>
+            <span class="n">total_time</span> <span class="o">=</span> <span class="n">saved_total_time</span>
+            <span class="k">if</span> <span class="n">total_time</span> <span class="o">&gt;</span>  <span class="n">min_total_time</span><span class="p">:</span>  <span class="c1"># time is already too long, no need further check</span>
+                <span class="k">return</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">route</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">loc</span> <span class="o">==</span> <span class="n">start0</span><span class="p">:</span>
+            <span class="n">route_count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">route</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
+            <span class="c1">#print(route_count, route, total_time)</span>
+            <span class="k">if</span> <span class="n">total_time</span> <span class="o">&lt;</span> <span class="n">min_total_time</span><span class="p">:</span>
+                <span class="n">best_route</span><span class="o">=</span><span class="n">route</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">min_total_time</span><span class="o">=</span><span class="n">total_time</span>
+            <span class="k">return</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">min_route</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"is the fastest route, and it takes "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">min_time</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" minutes/or other unit of time."</span><span class="p">)</span>
-<span class="c1"># 'dataset' is the name of the nested key value pair</span>
+<span class="n">min_total_time</span><span class="o">=</span><span class="mi">10000</span>
+<span class="n">start0</span> <span class="o">=</span> <span class="s1">'DelNorte'</span>
+<span class="n">route</span><span class="o">=</span><span class="p">[</span><span class="n">start0</span><span class="p">]</span>
+<span class="n">best_route</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">total_time</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">route_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">findBestRoute</span><span class="p">(</span><span class="n">start0</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">total_time</span><span class="p">)</span>
+
+<span class="c1">#print ("Total checked route # is "+str(route_count))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Best Route:"</span><span class="p">,</span> <span class="n">best_route</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Drive Time:"</span><span class="p">,</span> <span class="n">min_total_time</span><span class="p">,</span> <span class="s2">"minutes"</span><span class="p">)</span>
 </pre></div>
 
     </div>
