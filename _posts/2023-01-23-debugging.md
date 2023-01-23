@@ -38,6 +38,7 @@ Dynamic analysis, execution, stepping, brekapoints and exceptions, modying execu
 
 # Errors I've Run Into
 1. Exception has occurred: SystemExit
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/01-23-23-Screenshot1.png?raw=true)
 [First Website Referenced](https://stackoverflow.com/questions/52372810visual-studio-code-python-debugging-exception-has-occurred-systemexit)
 Tried unchecking Uncaught Exceptions... couldn't find no luck.
 ![This is an image](https://i.stack.imgur.com/damNF.png)
