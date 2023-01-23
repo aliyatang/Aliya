@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: My grading/scoring for the sample preformance tasks submissions
-categories: [markdown, week17]
+categories: [markdown, week17, week 18, week 19]
 title: Preformance Task Scoring
 ---
 # Scoring 1 - Week 17
@@ -473,6 +473,321 @@ Note: Submission 1 is an example of a lacking Create Preformance Task with multi
         <td>0</td>
         <td>
             Requirements not met - They describe two calls, one that has both the right letter and rigt position and another that has the right letter but wrong position. They also show thhe conditions and the results of each call, the color changing of the letter. However, these calls cause the same segment of code in the algorithm to execute. 
+        </td>
+        <td>0</td>
+        <td>None</td>
+    </tr>
+</table>
+
+# Scoring 3 - Week 19
+
+## Submission 1
+<table>
+    <tr>
+     <th>Row</th>
+     <th>Category</th>
+     <th>My Score</th>
+     <th>Score Reason</th>
+     <th>CB Score</th>
+     <th>Score Discrepancies</th>
+    </tr>
+    
+    <tr>
+        <td>1</td>
+        <td>Program Purpose and Function</td>
+        <td>1</td>
+        <td>
+            Requirements met - In the written response, they identify the input and output. The input is the users choice of rock paper, or scissors, and the output is if they win, lose, or draw. They also mention the program function and purpose. The function is said to be to output the relationships of the diffferent combinations of rock paper and scissors, and the purpose is said to be entertainment and can be used to make a decision for the user.
+        </td>
+        <td>1</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>Data Abstraction</td>
+        <td>1</td>
+        <td>
+            Requirements met - The student identifies the list "RPS" in the two code segments and mention how it is used for the purpose of the program to determine what combinations of rock papers and scissors wins/loses/draws. They also identify what is being stored in the list, which are rock paper and scissors. 
+        </td>
+        <td>0</td>
+        <td>Requirements note met - The student met all the requirements except for the second segment does not show data being accessed from the list. They do not reference the RPS list at all.</td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>Managing Complexity</td>
+        <td>0</td>
+        <td>
+            Requirements not met - In the repsonse they show the list "RPS", but this list doesn't manage complexity in the program. They can achieve the same thing without the list by putting the values directly into "cpuPlay". They say that they need this list because the program can only function with the list "RPS", without it, each potential computer input would need to responc to a number and then it would pick a number. However, this would work just as well, showing that they don't need list "RPS".  
+        </td>
+        <td>0</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>4</td>
+        <td>Procedural Abstraction</td>
+        <td>0</td>
+        <td>
+            Requirements not met - There is a student-devleoped procedure, "rpsGame", with the one parameter that is used and they show that they call this procedure. However they don't explain how this procedure contributes to the overall function, they only state that it allows for hte program to execute smoothly. . 
+        </td>
+        <td>0</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>5</td>
+        <td>Algorithm Implementation</td>
+        <td>1</td>
+        <td>
+            Requirements met - They have a student-devleoped algorithm, "rpsGame", that has sequencing, if else statement, and iteration, recursion, and their response explains this well in enough detail to be recreated. 
+        </td>
+        <td>1</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>6</td>
+        <td>Testing</td>
+        <td>1</td>
+        <td>
+            Requirements met - They describe two calls, one that uses uses "yourPlay" with value "Rock" and computer input "Paper", and another that uses "yourPlay" with value "Paper" and computer input "Rock". They also show what is tested by each call, the different parts of the if else statement seeing the combinations of Rock and Paper, and the results of each call, the display of "You Lose" or "Your Win". 
+        </td>
+        <td>1</td>
+        <td>None</td>
+    </tr>
+</table>
+
+
+## Submission 2
+<table>
+    <tr>
+     <th>Row</th>
+     <th>Category</th>
+     <th>My Score</th>
+     <th>Score Reason</th>
+     <th>CB Score</th>
+     <th>Score Discrepancies</th>
+    </tr>
+    
+    <tr>
+        <td>1</td>
+        <td>Program Purpose and Function</td>
+        <td>1</td>
+        <td>
+            Requirements met - In the written response, they identify the input and output. The input is the users choice of rock paper, or scissors, and the output is if they win, lose, or draw. They mention the program function, to input letters and output the letter wehre it belongs in a randomly generated word, and the purpose, to expand the users vocab and let them recognize new words. 
+        </td>
+        <td>1</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>Data Abstraction</td>
+        <td>1</td>
+        <td>
+            Requirements met - The student identifies the list "letOfGuessWord" in the two code segments and mention how it is used for the purpose of the program as data is being taken from the list in the for loop. They also identify what is being stored in the list, which is the indivdual letters of the word that the user tries to guess.
+        </td>
+        <td>1</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>Managing Complexity</td>
+        <td>1</td>
+        <td>
+            Requirements met - In the repsonse they explain how the code uses lists to store the letters of the word to manage complexity. They say that they need this list because otherwise the code would be very inefficient becasue there would have to be 5 new variables ot be stored in the individual letters, which would also make the loop more complicated. 
+        </td>
+        <td>1</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>4</td>
+        <td>Procedural Abstraction</td>
+        <td>1</td>
+        <td>
+            Requirements met - There is a student-devleoped procedure, "guessWords", with one parameter that are used and they show that they call this procedure. They also show how this procedure contributes to the overall function by stating that a letter will pop up in the space or it will take a life away from the user. 
+        </td>
+        <td>1</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>5</td>
+        <td>Algorithm Implementation</td>
+        <td>1</td>
+        <td>
+            Requirements met - They have a student-devleoped procedure, "guessWords", that has sequencing, if else statement, and iteration, a for loop, and their response explains this well in enough detail to be recreated, explaining both the if else statement and foor loop and what they do. 
+        </td>
+        <td>1</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>6</td>
+        <td>Testing</td>
+        <td>1</td>
+        <td>
+            Requirements met - They describe two calls, one that uses input of "1" and one of letter "h" by the user and guesses "hello". They also show what is tested by each call, how "1" is not in "hello" and "h" is in "hello", and the results of each call, saying the first call is false and the second call is true. 
+        </td>
+        <td>1</td>
+        <td>None</td>
+    </tr>
+</table>
+
+## Submission 3
+<table>
+    <tr>
+     <th>Row</th>
+     <th>Category</th>
+     <th>My Score</th>
+     <th>Score Reason</th>
+     <th>CB Score</th>
+     <th>Score Discrepancies</th>
+    </tr>
+    
+    <tr>
+        <td>1</td>
+        <td>Program Purpose and Function</td>
+        <td>1</td>
+        <td>
+            Requirements not met - In the written response, they identify the input and output. The input is the users choice of the state, and the output is the the general information about that state. They also mention both the function and the purpose. The function is to hprovide the user with information about a U.S. state, and the purpose is to help the user with memorzation or just be used to learn something new. 
+        </td>
+        <td>1</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>Data Abstraction</td>
+        <td>0</td>
+        <td>
+            Requirements not met - The student identifies the list "stateList", but it is not shown to be used in either of the two code segments. They do mention how it is used for the purpose of the program as it contains the general information about the state. 
+        </td>
+        <td>0</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>Managing Complexity</td>
+        <td>0</td>
+        <td>
+            Requirements not met - In the repsonse they explain how the code manages complexity. They say that they need this list because, but they don't explain why their code needs a list. They only say that it would be very inefficient and take a long time to run, which is very vague. 
+        </td>
+        <td>0</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>4</td>
+        <td>Procedural Abstraction</td>
+        <td>0</td>
+        <td>
+            Requirements not met - There is a student-devleoped procedure, "updateScreen", but it has no parameter. They also don't show how this procedure contributes to the overall function, they say that the state screen would be updated but the procedure doesn't do that. 
+        </td>
+        <td>0</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>5</td>
+        <td>Algorithm Implementation</td>
+        <td>1</td>
+        <td>
+            Requirements met - They have a student-devleoped algorithm, "updateScreen", that has sequencing, if else statement. Their response explains it in well enough detail to show how the "updateScreen" algorithm works. 
+        </td>
+        <td>0</td>
+        <td>The procedure "updateScreen" does not include iteration, and it only partiall explains how the alrogthm "updateScreen" works.</td>
+    </tr>
+
+    <tr>
+        <td>6</td>
+        <td>Testing</td>
+        <td>0</td>
+        <td>
+            Requirements met - They describe two calls, one that calls "stateInput" to update the screen by pressing the go button and another that calls "stateInput" to display more information by prssing the drop down. They also show what is tested by each call, the display of information for the desired state and the extra information. 
+        </td>
+        <td>0</td>
+        <td>They actually described two calls FROM the prodcedure instead of two calls TO the procedure, and they don't have a prarmeter. They weren't supposed to describe two sepearte operation being preformed, they were supposed to do onditions being tested by the given parameter. </td>
+    </tr>
+</table>
+
+## Submission 4
+<table>
+    <tr>
+     <th>Row</th>
+     <th>Category</th>
+     <th>My Score</th>
+     <th>Score Reason</th>
+     <th>CB Score</th>
+     <th>Score Discrepancies</th>
+    </tr>
+    
+    <tr>
+        <td>1</td>
+        <td>Program Purpose and Function</td>
+        <td>1</td>
+        <td>
+            Requirements met - In the response, they identify the input and output. The input is the users pressing the 'a','d', spacebar, etc keys, and the output is the boat's movement, They also explain the function and urpose of the program, the function is to control the gameplay of the boat with keys, and the purpose is to lessen boredom fot he user.  
+        </td>
+        <td>1</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>Data Abstraction</td>
+        <td>1</td>
+        <td>
+            Requirements met - The student identifies the list "fishtypes" in the two code segments and mention how it is used for the purpose of the program as data from the list is accessed in a loop. They also identify what is being stored in the list, which is the type of fish and the number of a specific fish caught. 
+        </td>
+        <td>1</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>Managing Complexity</td>
+        <td>1</td>
+        <td>
+            Requirements met - In the repsonse they explain how the code uses a list of lists to manage complexity. They say that they need this list because it allows for more fish to be added to the data list instead of making new variables every time. 
+        </td>
+        <td>1</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>4</td>
+        <td>Procedural Abstraction</td>
+        <td>1</td>
+        <td>
+            Requirements met - There is a student-devleoped procedure, "clone+movment+range", with the multiple, five, parameters that are used and they show that they call this procedure. They also show how this procedure contributes to the overall function by stating that that procedure determines wehre the clone of a sprite spawns, the movement, and where it goes, allowing for the program of catching a fish to be more challenging. 
+        </td>
+        <td>1</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>5</td>
+        <td>Algorithm Implementation</td>
+        <td>1</td>
+        <td>
+            Requirements met - They have a student-devleoped algorithm, "clone+movement+range", that has sequencing, if else statement, and iteration, a for loop, and their response explains this well in enough detail to be recreated. 
+        </td>
+        <td>1</td>
+        <td>None</td>
+    </tr>
+
+    <tr>
+        <td>6</td>
+        <td>Testing</td>
+        <td>0</td>
+        <td>
+            Requirements not met - They don't describe the two calls, they just explain what types of call they are. They dno't explain the conditions, either, they just say what is tested by the calls. 
         </td>
         <td>0</td>
         <td>None</td>
