@@ -793,3 +793,6 @@ Note: Submission 1 is an example of a lacking Create Preformance Task with multi
         <td>None</td>
     </tr>
 </table>
+
+## Summary/Takeaways: 
+From these four submissions, something I noticed was how important the written response is. Previously, I thought that you should put most of the effort into the actual program and video. However, upon reviewing this weeks and past submissions, I realize that many people did have correct code but they didn't get the point because their written response didn't meet the requirements. When doing my written response, I think it would not only be helpful to check in with the college board criteria, but also for me to reference both the submissions who got the point and those who didn't, to see what I should and shouldn't do. 
