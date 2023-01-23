@@ -35,3 +35,6 @@ To debug other kinds of applications, you can start the debugger through the Run
 
 # Basics
 Dynamic analysis, execution, stepping, brekapoints and exceptions, modying execution, runtime error debugging, logical error debugging
+
+# Errors I've Run Into
+1. Exception has occurred: SystemExit
