@@ -1,7 +1,7 @@
 ---
 toc: true
 layout: post
-description: Individul plan for CPT features
+description: Individual plan for CPT features
 categories: [markdown, week 20]
 title: Project Blog
 ---
