@@ -5,6 +5,9 @@ description: Collegeboard requirements project explanation
 categories: [markdown, week24]
 title: Collegeboard Requirements Guide for Review
 ---
+## Video Guide
+[Click Here](https://youtu.be/GaTUvSp2Wic)
+
 ## Purpose and Function
 The purpose of this feature is for users to be entertained and improve their English vocabulary skills as they play a word guessing game. It functions by taking the 5 letter input of the user, and outputting different colors to indicate the similiarity of the input with the correct answer. Users can also document their wordle scores to compare their scores with others on the leaderboard, and delete with a pin authentification if needed. 
 
@@ -35,6 +38,7 @@ This code segment shows the algorithm for the asynchronus function "checkGuess".
 The function "checkGuess" contains iteration (for loop), sequencing and selection (if/else statements). First, is uses a if statement, to check if "guessString", the user's inputted guess, is less than 5-letters (sequencing). If this condition is met and the word is not long enough, then the user will be alerted that their input isn't valid (selection). Then, another if statement checks in with a dictioanry API to see if the inputted word doesn't exist in the dictionary (sequencing). If the word doesn't exist in the dictionary, then the user will be alerted that their inputted guessed word is not a real word (selection). Lastly, an else statement is used, which is for a valid input (sequencing). Within this else statement (selection), it uses a for loop (iteration) to check every single letter of the 5-letter inputted word and compares it with the actual correct unknown guessing word and marks an index. It uses a seires of if/else statements based on the position of the letter (sequencing): if the index remains the same and has no change, meaning the letter is not in the word, then the output will be grey, if the indexes are the same, then that means the letter is the right spot and the letter color outputted is green, and lastly an else statement is used for the remaining options, which means that the letter is in the word but not in the right spot and the letter color outputted should be yellow (all sequencing and selection). 
 
 ## Testing
+
 First call:
 "checkGuess: is called when the user inputs their first guess, with the arugment being the first 5-letter word inputted as a guess and it is compared to the actual unknown word. 
 
