@@ -1,7 +1,7 @@
 ---
 toc: true
 layout: post
-description: Collegeboard requirements project explanation
+description: WRONG Collegeboard requirements project explanation
 categories: [markdown, week24]
 title: Collegeboard Requirements Guide for Review
 ---
