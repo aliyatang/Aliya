@@ -50,7 +50,7 @@ Condition(s) tested by the second call:
 The second call tests to see if the old color of the keyboard letter is yellow and if the new color isn't green. 
 
 Results of the first call:
-The letters from the user's guess is tested, allowing for the correct letters color boxes to be tested and updated.
+The letters from the user's guess is tested, allowing for the correct letters color boxes to be tested and updated. The accuracy of each letter from the users guess can be updated.
 
 Results of the second call:
 The accuracy and the similarity of the letter is tested. The previous color of the specific key is yellow, and remains yellow, allowing the status of this specific letter to be accurate and updated for the user. 
