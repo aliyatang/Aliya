@@ -151,22 +151,22 @@ This code segment shows the algorithm for function “shadeKeyBoard” with the 
 <h2 id="testing">
 <a class="anchor" href="#testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing</h2>
 <p>First call:
-“shadeKeyBoard” is called when the user presses enter and the keyboard buttons check the letters they enter.</p>
+“shadeKeyBoard” is called when the user presses enter and the keyboard buttons check the letters they enter, using the “letter” parameter.</p>
 
 <p>Second call: 
 “shadeKeyBoard” is called when the user presses enter and the boxes need to be reshaded as they got new letter colors. Specifically, if the first letter color is yellow and now the correct letter is in the correct spot, using the “color” parameter.</p>
 
 <p>Condition(s) tested by first call:
-The first call tests to see if the first keyboard letter box needs reshading but now it doesn’t.</p>
+The first call tests to see what letters are guessed and where they may possibly be need to be updated on the user interface keyboard.</p>
 
 <p>Condition(s) tested by the second call: 
-The second call tests to see if the users inputted last (6th) guess matches the actual unknown word and how similar it is. Each letter of the word is compared with the actual word to see it’s position and accuracy.</p>
+The second call tests to see if the old color of the keyboard letter is yellow and if the new color isn’t green.</p>
 
 <p>Results of the first call:
-The accuracy and similarity of the first guess with the actual word is shown each of the letters changing color to green, yellow, or grey to display the accuracy of each letter. If the guess is completely correct, a message is displayed that the user won. all the letters will be green, and the program ends. if the guess does not completely match the word, then the program will continue and the user will continue to enter their next guess.</p>
+The letters from the user’s guess is tested, allowing for the correct letters color boxes to be tested and updated.</p>
 
 <p>Results of the second call:
-The accuracy and similarity of the last (6th) guess is compared to the actual word and displayed using the colored letters. If the last guess is completely correct, a message is displayed that the user won and the actual unknown word will be displayed.</p>
+The accuracy and the similarity of the letter is tested. The previous color of the specific key is yellow, and remains yellow, allowing the status of this specific letter to be accurate and updated for the user.</p>
 
   </div><a class="u-url" href="/Aliya/markdown/week24/2023/02/28/CBreviewblog.html" hidden></a>
 </article>
