@@ -38,13 +38,13 @@ The function "shadeKeyBoard" contains iteration (for loop), sequencing and selec
 
 ## Testing
 First call:
-"checkGuess: is called when the user inputs their first guess, with the arugment being the first 5-letter word inputted as a guess and it is compared to the actual unknown word. 
+"shadeKeyBoard" is called when the user presses enter and the keyboard buttons check the letters they enter. 
 
 Second call: 
-"checkGuess" is called at the end of the program for the 6th guess, and if the final guessed word is incorrect, the user will be alerted with the correct word. 
+"shadeKeyBoard" is called when the user presses enter and the boxes need to be reshaded as they got new letter colors. Specifically, if the first letter color is yellow and now the correct letter is in the correct spot, using the "color" parameter. 
 
 Condition(s) tested by first call:
-The first call tests to see if the users inputted first guess matches the actual unknown word and how similar it is. Each letter of the word is compared with the actual word to see it's position and accuracy. 
+The first call tests to see if the first keyboard letter box needs reshading but now it doesn't.
 
 Condition(s) tested by the second call: 
 The second call tests to see if the users inputted last (6th) guess matches the actual unknown word and how similar it is. Each letter of the word is compared with the actual word to see it's position and accuracy. 
