@@ -23,4 +23,33 @@ Here is the list “WORDS” being used to randomly select the unknown correct.<
 <p>The code segment above show sthe list “WORDS”, which manages complexity int he program as it contains thousands of words in one location variable. The list is needed, as without it, all the variables would be stored into seperate variables which would result in thousands of different variables. That is very impractical and hard to manage in comparison to stroing the words all in one list location.</p>
 
 <h2 id="procedural-abstraction">Procedural Abstraction</h2>
+<p><img src="https://github.com/aliyatang/Aliya/blob/master/images/Screen%20Shot%202023-02-28%20at%202.26.50%20AM.png?raw=true" alt="This is an image" />
+<img src="https://github.com/aliyatang/Aliya/blob/master/images/Screen%20Shot%202023-02-28%20at%202.27.04%20AM.png?raw=true" alt="This is an image" />
+This code segment shows the algorithm for the asynchronus function “checkGuess”.</p>
 
+<p><img src="https://github.com/aliyatang/Aliya/blob/master/images/Screen%20Shot%202023-02-28%20at%202.31.31%20AM.png?raw=true" alt="This is an image" />
+ The “checkGuess” function is being called by the function clickKey, shown above. When the enter key is pressed, it calls “checkGuess” to check the user’s inputted guess.</p>
+
+<p>“checkGuess” contributes to the overall function as the program, as it allows for the users inputted guess to be checked to see the similarity between the actual unknown word to be guessed, and indicates an appropriate response(whether the word is long enough or a real word, or the color of the letter) to be outputted. This allows for the whole wordle game to function and continue on.</p>
+
+<h2 id="algorithm-implementation">Algorithm Implementation</h2>
+<p>The function “checkGuess” contains iteration (for loop), sequencing and selection (if/else statements). First, is uses a if statement, to check if “guessString”, the user’s inputted guess, is less than 5-letters (sequencing). If this condition is met and the word is not long enough, then the user will be alerted that their input isn’t valid (selection). Then, another if statement checks in with a dictioanry API to see if the inputted word doesn’t exist in the dictionary (sequencing). If the word doesn’t exist in the dictionary, then the user will be alerted that their inputted guessed word is not a real word (selection). Lastly, an else statement is used, which is for a valid input (sequencing). Within this else statement (selection), it uses a for loop (iteration) to check every single letter of the 5-letter inputted word and compares it with the actual correct unknown guessing word and marks an index. It uses a seires of if/else statements based on the position of the letter (sequencing): if the index remains the same and has no change, meaning the letter is not in the word, then the output will be grey, if the indexes are the same, then that means the letter is the right spot and the letter color outputted is green, and lastly an else statement is used for the remaining options, which means that the letter is in the word but not in the right spot and the letter color outputted should be yellow (all sequencing and selection).</p>
+
+<h2 id="testing">Testing</h2>
+<p>First call:
+“checkGuess: is called when the user inputs their first guess, with the arugment being the first 5-letter word inputted as a guess and it is compared to the actual unknown word.</p>
+
+<p>Second call: 
+“checkGuess” is called at the end of the program for the 6th guess, and if the final guessed word is incorrect, the user will be alerted with the correct word.</p>
+
+<p>Condition(s) tested by first call:
+The first call tests to see if the users inputted first guess matches the actual unknown word and how similar it is. Each letter of the word is compared with the actual word to see it’s position and accuracy.</p>
+
+<p>Condition(s) tested by the second call: 
+The second call tests to see if the users inputted last (6th) guess matches the actual unknown word and how similar it is. Each letter of the word is compared with the actual word to see it’s position and accuracy.</p>
+
+<p>Results of the first call:
+The accuracy and similarity of the first guess with the actual word is shown each of the letters changing color to green, yellow, or grey to display the accuracy of each letter. If the guess is completely correct, a message is displayed that the user won. all the letters will be green, and the program ends. if the guess does not completely match the word, then the program will continue and the user will continue to enter their next guess.</p>
+
+<p>Results of the second call:
+The accuracy and similarity of the last (6th) guess is compared to the actual word and displayed using the colored letters. If the last guess is completely correct, a message is displayed that the user won and the actual unknown word will be displayed.</p>
