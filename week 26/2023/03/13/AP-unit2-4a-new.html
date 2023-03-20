@@ -533,12 +533,12 @@ Try and except are used for exception handling when an error occurs, can be used
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Records exist uid toby, or error.
-Records exist uid niko, or error.
-Records exist uid lex, or error.
-Records exist uid whit, or error.
-Records exist uid indi, or error.
-Records exist uid raven, or error.
+<pre>Created new uid toby
+Created new uid niko
+Created new uid lex
+Created new uid whit
+Created new uid indi
+Created new uid raven
 </pre>
 </div>
 </div>
@@ -700,7 +700,7 @@ This is for creating a new user by adding a new user an their information to the
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Created
- {'id': 7, 'name': 'Aliya', 'uid': 'aliyatang', 'dob': '11-08-2006', 'age': 16, 'score': '4'}
+ {'id': 7, 'name': 'Aliya', 'uid': 'aliyatang', 'dob': '11-08-2006', 'age': 16, 'score': '3'}
 </pre>
 </div>
 </div>
@@ -777,25 +777,25 @@ json_ready variable is the converted, correctly fomaratted JSON User data. It is
 <pre>[{'id': 1,
   'name': 'Thomas Edison',
   'uid': 'toby',
-  'dob': '03-19-2023',
+  'dob': '03-20-2023',
   'age': 0,
   'score': '5'},
  {'id': 2,
   'name': 'Nikola Tesla',
   'uid': 'niko',
-  'dob': '03-19-2023',
+  'dob': '03-20-2023',
   'age': 0,
   'score': '3'},
  {'id': 3,
   'name': 'Alexander Graham Bell',
   'uid': 'lex',
-  'dob': '03-19-2023',
+  'dob': '03-20-2023',
   'age': 0,
   'score': '4'},
  {'id': 4,
   'name': 'Eli Whitney',
   'uid': 'whit',
-  'dob': '03-19-2023',
+  'dob': '03-20-2023',
   'age': 0,
   'score': '1'},
  {'id': 5,
@@ -815,7 +815,7 @@ json_ready variable is the converted, correctly fomaratted JSON User data. It is
   'uid': 'aliyatang',
   'dob': '11-08-2006',
   'age': 16,
-  'score': '4'}]</pre>
+  'score': '3'}]</pre>
 </div>
 
 </div>
@@ -931,9 +931,9 @@ json_ready variable is the converted, correctly fomaratted JSON User data. It is
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{"id": 7, "name": "Aliya", "uid": "aliyatang", "dob": "11-08-2006", "age": 16, "score": "4"}
+<pre>{"id": 7, "name": "Aliya", "uid": "aliyatang", "dob": "11-08-2006", "age": 16, "score": "3"}
 Updated leader:
- {'id': 7, 'name': 'Alice', 'uid': 'alicetang', 'dob': '01-30-2005', 'age': 18, 'score': '4'}
+ {'id': 7, 'name': 'Alice', 'uid': 'alicetang', 'dob': '01-30-2005', 'age': 18, 'score': '3'}
 </pre>
 </div>
 </div>
@@ -978,14 +978,14 @@ Updated leader:
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Leader with user ID "</span> <span class="o">+</span> <span class="n">uid</span> <span class="o">+</span> <span class="s2">" not found."</span><span class="p">)</span>
         <span class="k">return</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">leader</span><span class="p">)</span>
-
+    
     <span class="n">password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter password of leader to delete:"</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">check_credentials</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
         <span class="k">pass</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Incorrect password"</span><span class="p">)</span>
         <span class="k">return</span>
-
+    
     <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">leader</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
@@ -1006,7 +1006,7 @@ Updated leader:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{"id": 7, "name": "Alice", "uid": "alicetang", "dob": "01-30-2005", "age": 18, "score": "4"}
+<pre>{"id": 7, "name": "Alice", "uid": "alicetang", "dob": "01-30-2005", "age": 18, "score": "3"}
 User has been deleted successfully.
 </pre>
 </div>
