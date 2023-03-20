@@ -670,7 +670,7 @@ Created new movie Violet Evergarden The Movie
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
-    <span class="c1"># first require uid input</span>
+    <span class="c1"># first require name input</span>
     <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your movie name:"</span><span class="p">)</span>
     <span class="n">movie</span> <span class="o">=</span> <span class="n">find_by_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">movie</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -691,20 +691,21 @@ Created new movie Violet Evergarden The Movie
     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
         <span class="n">dayformat</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Date </span><span class="si">{</span><span class="n">new_day</span><span class="si">}</span><span class="s2"> incorrect format. Date set to </span><span class="si">{</span><span class="n">dayformat</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
+    
     <span class="n">temp_rate</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Update your movie rating:"</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">temp_rate</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">1</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">(</span><span class="n">temp_rate</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">10</span><span class="p">:</span>
-        <span class="n">new_rate</span> <span class="o">=</span> <span class="mi">6</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Score </span><span class="si">{</span><span class="n">temp_rate</span><span class="si">}</span><span class="s2"> invalid. Score set to </span><span class="si">{</span><span class="n">new_rate</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">new_rate</span> <span class="o">=</span> <span class="n">temp_rate</span>
-
+    <span class="sd">'''</span>
+<span class="sd">    if int(temp_rate)&lt;1 or int(temp_rate)&gt;10:</span>
+<span class="sd">        new_rate = 6</span>
+<span class="sd">        print(f"Score {temp_rate} invalid. Score set to {new_rate}")</span>
+<span class="sd">    else:</span>
+<span class="sd">        new_rate = temp_rate</span>
+<span class="sd">    '''</span>
     <span class="n">new_comment</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Update your comments about this movie:"</span><span class="p">)</span>
 
     <span class="c1"># update the leader in the database</span>
     <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">updated</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">new_name</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="n">dayformat</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">new_rate</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="n">new_comment</span><span class="p">)</span>
+            <span class="n">updated</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">new_name</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="n">dayformat</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">temp_rate</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="n">new_comment</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"Updated movie:</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">updated</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
         <span class="k">except</span><span class="p">:</span>  <span class="c1"># error raised if object not created</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Updating movie </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> unsucessful."</span><span class="p">)</span>
@@ -738,7 +739,7 @@ Updating movie Top Gun: Maverick unsucessful.
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now, I updated the leader "Aliya" to be changed to my sister and her information "Alice"</p>
+<p>Now, I updated the movie "Top Gun: Maverick" to have some different information</p>
 
 </div>
 </div>
