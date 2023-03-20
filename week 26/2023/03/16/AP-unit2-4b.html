@@ -10,15 +10,15 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Using Programs with Data is focused on SQL and database actions. Part B focuses on learning SQL commands, connections, and curses using an Imperative programming style," />
 <meta property="og:description" content="Using Programs with Data is focused on SQL and database actions. Part B focuses on learning SQL commands, connections, and curses using an Imperative programming style," />
-<link rel="canonical" href="https://aliyatang.github.io/Aliya/2023/03/16/AP-unit2-4b.html" />
-<meta property="og:url" content="https://aliyatang.github.io/Aliya/2023/03/16/AP-unit2-4b.html" />
+<link rel="canonical" href="https://aliyatang.github.io/Aliya/week%2026/2023/03/16/AP-unit2-4b.html" />
+<meta property="og:url" content="https://aliyatang.github.io/Aliya/week%2026/2023/03/16/AP-unit2-4b.html" />
 <meta property="og:site_name" content="Aliya’s Blog ✧/ᐠ-ꞈ-ᐟ\" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-03-16T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Unit 2.4b Using Programs with Data, SQL" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-16T00:00:00-05:00","datePublished":"2023-03-16T00:00:00-05:00","description":"Using Programs with Data is focused on SQL and database actions. Part B focuses on learning SQL commands, connections, and curses using an Imperative programming style,","headline":"Unit 2.4b Using Programs with Data, SQL","mainEntityOfPage":{"@type":"WebPage","@id":"https://aliyatang.github.io/Aliya/2023/03/16/AP-unit2-4b.html"},"url":"https://aliyatang.github.io/Aliya/2023/03/16/AP-unit2-4b.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-16T00:00:00-05:00","datePublished":"2023-03-16T00:00:00-05:00","description":"Using Programs with Data is focused on SQL and database actions. Part B focuses on learning SQL commands, connections, and curses using an Imperative programming style,","headline":"Unit 2.4b Using Programs with Data, SQL","mainEntityOfPage":{"@type":"WebPage","@id":"https://aliyatang.github.io/Aliya/week%2026/2023/03/16/AP-unit2-4b.html"},"url":"https://aliyatang.github.io/Aliya/week%2026/2023/03/16/AP-unit2-4b.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/Aliya/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://aliyatang.github.io/Aliya/feed.xml" title="Aliya's Blog ✧/ᐠ-ꞈ-ᐟ\" /><link rel="shortcut icon" type="image/x-icon" href="/Aliya/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -79,10 +79,17 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      11 min read
     
 </span></p>
 
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/Aliya/categories/#Week 26">Week 26</a>
+        
+      
+      </p>
     
 
     
@@ -163,11 +170,21 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses PRAGMA statement to read schema.</p>
 </blockquote>
-<p>Describe Schema, here is resource <a href="https://www.sqlite.org/index.html">Resource</a>- What is a database schema?</p>
+<p>Describe Schema, here is resource <a href="https://www.sqlite.org/index.html">Resource</a>- What is a database schema?
+A database schema is a column in a database that is organized by a certain piece of information</p>
 <ul>
-<li>What is the purpose of identity Column in SQL database?</li>
-<li>What is the purpose of a primary key in SQL database?</li>
-<li>What are the Data Types in SQL table?</li>
+<li>
+<p>What is the purpose of identity Column in SQL database?
+The identity Column is used to diffrentiate data, meaning that each piece of data will be different. In our database the identity column is the id column. Since all the ids are different, each user will be differentiated. Things like names don't make good idenitty columns, because there is a possibility that there will be duplicate names, and if there are duplicates then not everything can be differentiated.</p>
+</li>
+<li>
+<p>What is the purpose of a primary key in SQL database?
+Purpose of primary key is so that certain pieces of information in a database can be easily accessed. Primary key shouldn't be changed for a piece of data and remains constant so we can always indentify something, easily access it.</p>
+</li>
+<li>
+<p>What are the Data Types in SQL table?
+Integer, string, boolean, images, etc. Any data type or structures (lists, dictionary, class) even. A table can fit any data type.</p>
+</li>
 </ul>
 
 </div>
@@ -182,7 +199,7 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 
-<span class="n">database</span> <span class="o">=</span> <span class="s1">'files/sqlite.db'</span> <span class="c1"># this is location of database</span>
+<span class="n">database</span> <span class="o">=</span> <span class="s1">'instance/sqlite.db'</span> <span class="c1"># this is location of database</span>
 
 <span class="k">def</span> <span class="nf">schema</span><span class="p">():</span>
     
@@ -209,6 +226,24 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(0, 'id', 'INTEGER', 1, None, 1)
+(1, '_name', 'VARCHAR(255)', 1, None, 0)
+(2, '_uid', 'VARCHAR(255)', 1, None, 0)
+(3, '_password', 'VARCHAR(255)', 1, None, 0)
+(4, '_dob', 'DATE', 0, None, 0)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -222,10 +257,22 @@ window.onload = wrap_img;
 <p>Uses SQL SELECT statement to read data</p>
 </blockquote>
 <ul>
-<li>What is a connection object?  After you google it, what do you think it does?</li>
-<li>Same for cursor object?</li>
-<li>Look at conn object and cursor object in VSCode debugger.  What attributes are in the object?</li>
-<li>Is "results" an object?  How do you know?</li>
+<li>
+<p>What is a connection object?  After you google it, what do you think it does?
+A connection object represents a connection to a database. I think it allows connection with a database so you can interact with it, for example execute commands and retrieve data from the databse.</p>
+</li>
+<li>
+<p>Same for cursor object?
+Cursor object is object that provides a way to iterate over the rows a result sset returned by SQL query. I think it lets the programmer get/fetch data from a database each row, and preform oeprations on each row every time they are fetched.</p>
+</li>
+<li>
+<p>Look at conn object and cursor object in VSCode debugger.  What attributes are in the object?
+The attributes in the conn object are special variables, function variables, class variables, in_transaction, isolation_level, row_factory, and total_changes. The attrubutes in the cursor object are special variables, function variables, arraysize, connection, description, lastrowid, row_factory, and rowcount.</p>
+</li>
+<li>
+<p>Is "results" an object?  How do you know?
+"results" is object because it has attributes, it is set equal to cursor.execute()</p>
+</li>
 </ul>
 
 </div>
@@ -268,6 +315,26 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(1, 'Thomas Edison', 'toby', 'sha256$LIuKMjDD607oFRlt$901eba33520a20ac8bcf940371a44d74bbdb2284fa6dcb14ae7737b80236bf25', '1847-02-11')
+(2, 'Nikola Tesla', 'niko', 'sha256$KYNzwWEAf7lVqFQQ$4e5c81b1a60b7e62013ee4dd02eb9cb49a1fe45e52281ce7f19d29e1b1864f61', '2023-03-15')
+(3, 'Alexander Graham Bell', 'lex', 'sha256$UDUgd24E2LFkfL3y$b240a3a132620456ef88dd3089c4e86bde19d6f2b37b8dd99e4fd9ee3a118d2e', '2023-03-15')
+(4, 'Eli Whitney', 'whit', 'sha256$hFqIefED1u6xB6n7$e4c92080da18ff3d11316014ad0583e528eb99b0c9309bb05464b93cb687dcd1', '2023-03-15')
+(5, 'Indiana Jones', 'indi', 'sha256$lwp2uxW73pC5E9rQ$0b7e739b12c88d850e0a7d8ede3186fb07a1f1d5fadc506cc4eb7557b6eb0063', '1920-10-21')
+(6, 'Marion Ravenwood', 'raven', 'sha256$b5MqJQJ1Z39ES2Wh$c5cd68bea63d0746046aa94f8e82883984823ac0eacf0040cb019544eb24bd6b', '1921-10-21')
+(7, 'Aliya', '888', 'qwert', '2006-11-08')
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -280,10 +347,15 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses SQL INSERT to add row</p>
 <ul>
-<li>Compore create() in both SQL lessons.  What is better or worse in the two implementations?</li>
-<li>Explain purpose of SQL INSERT.   Is this the same as User <strong>init</strong>?</li>
+<li>Compare create() in both SQL lessons.  What is better or worse in the two implementations?
+For create function in 2.4a the function </li>
 </ul>
 </blockquote>
+<p>Comparing the create() in both SQL lessons, the create function in 2.4a uses the SQLite database to take in the data that the user inputs to create new usuers. In 2.4b, the create function uses SQLAlchemy to create new usuers. The 2.4a create function by adding SQLite database  can be used for more simple projects, as you just have to enter a few pieces of information, however the 2.4b function using SQLAlchemy would be better for longer more complex projects.</p>
+<ul>
+<li>Explain purpose of SQL INSERT.   Is this the same as User <strong>init</strong>?
+The purpose of SQL INSERT is to insert new rows of data into the database table. On the other hand,User <strong>init</strong> initalizes a nd sets up new users and creates them. So, SQL INSERT and User <strong>init</strong> are not the same, as INSERT just adds new data in a database table, while User <strong>in it</strong> is used to create new user in the data system. </li>
+</ul>
 
 </div>
 </div>
@@ -325,10 +397,24 @@ window.onload = wrap_img;
     <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     
-<span class="c1">#create()</span>
+<span class="n">create</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>A new user record alicetang has been created
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -344,11 +430,20 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses SQL UPDATE to modify password</p>
 <ul>
-<li>What does the hacked part do?</li>
-<li>Explain try/except, when would except occur?</li>
-<li>What code seems to be repeated in each of these examples to point, why is it repeated?</li>
+<li>What does the hacked part do?
+The hacked part checks if the length of the password when being updated is less than two characters, if it is then the code assumes that the user is being hacked, and if it greater than 2 then the password is successfully updated.</li>
 </ul>
 </blockquote>
+<ul>
+<li>
+<p>Explain try/except, when would except occur?
+Try/except is used in case errors occur, the try method tries to see if something works and if it doesn't and there is an error it triggers the except method.</p>
+</li>
+<li>
+<p>What code seems to be repeated in each of these examples to point, why is it repeated?
+Try/except is repeated. It is important and it repeated because it makes sure in different places if there are any errors, for example if an input is not valid or incorrect, then it acts according by, for example telling the user that there is an error.</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -394,10 +489,24 @@ window.onload = wrap_img;
     <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     
-<span class="c1">#update()</span>
+<span class="n">update</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The row with user id alicetang the password has been successfully updated
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -413,10 +522,14 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses a delete function to remove a user based on a user input of the id.</p>
 <ul>
-<li>Is DELETE a dangerous operation?  Why?</li>
-<li>In the print statemements, what is the "f" and what does {uid} do?</li>
+<li>Is DELETE a dangerous operation?  Why?
+Yes because for this after deleting data there is no way of recovering it. You are at risk of accidentally deleting all your data and losing it forever!</li>
 </ul>
 </blockquote>
+<ul>
+<li>In the print statemements, what is the "f" and what does {uid} do?
+You can use the f to embed expressions inside of string literals. The {uid} is the put the variable uid insdie the string for the user id that is being used in the code. This is helpful so you don't have to do the concatentating strings with so many + and " all the time. </li>
+</ul>
 
 </div>
 </div>
@@ -455,10 +568,24 @@ window.onload = wrap_img;
     <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     
-<span class="c1">#delete()</span>
+<span class="n">delete</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The row with uid alicetang was successfully deleted
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -474,10 +601,14 @@ window.onload = wrap_img;
 <blockquote>
 <p>CRUD and Schema interactions from one location by running menu. Observe input at the top of VSCode, observe output underneath code cell.</p>
 <ul>
-<li>Why does the menu repeat?</li>
-<li>Could you refactor this menu?  Make it work with a List?</li>
+<li>Why does the menu repeat?
+It repeats because it is recursion, meaning that the function keeps calling itself over and over and repeats. </li>
 </ul>
 </blockquote>
+<ul>
+<li>Could you refactor this menu?  Make it work with a List?
+You could refactor this by making a list with the (C)reate (R)ead (U)pdate or (D)elete or (S)chema as the values inside. For example, CRUDS = ["C", "R", "U", "D", "S"]</li>
+</ul>
 
 </div>
 </div>
@@ -506,7 +637,7 @@ window.onload = wrap_img;
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Please enter c, r, u, or d"</span><span class="p">)</span> 
     <span class="n">menu</span><span class="p">()</span> <span class="c1"># recursion, repeat menu</span>
-        
+
 <span class="k">try</span><span class="p">:</span>
     <span class="n">menu</span><span class="p">()</span> <span class="c1"># start menu</span>
 <span class="k">except</span><span class="p">:</span>
@@ -514,6 +645,20 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The row with uid 888 was successfully deleted
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -528,11 +673,19 @@ window.onload = wrap_img;
 </h1>
 <ul>
 <li>Add this Blog to you own Blogging site.  In the Blog add notes and observations on each code cell.</li>
-<li>In this implementation, do you see procedural abstraction?</li>
-<li>In 2.4a or 2.4b lecture<ul>
-<li>Do you see data abstraction?  Complement this with Debugging example.</li>
-<li>Use Imperative or OOP style to Create a new Table or do something that applies to your CPT project.</li>
-</ul>
+<li>
+<p>In this implementation, do you see procedural abstraction?
+I see procedural abstraction in several places throughout. For example, the seperation of the CRUD functions into four different functions to prevent these functions to getting too long or prone to be mixed up. In each of these methods, I created new function. See my new data table for movie tracking in different notebook!</p>
+</li>
+<li>
+<p>In 2.4a or 2.4b lecture</p>
+</li>
+<li>
+<p>Do you see data abstraction?  Complement this with Debugging example.
+I saw it all throughout the 2.4a and 2.4b lectures, all the different classes and functions to seperate different things to do. A specific example, the find_by_uid(uid) function and the check_credentials(uid, password) function. These two are methods to identify user to credentials uid and password, and they are used several times throughout the code, for example find_by_uid(uid) function is used in the update and delete functions to make sure that the desired user to be updated or deleted actually exists. So, instead of having to write out the code block to go through the database to check if a uid exists, you can just call the function. The check_credentials(uid, password) function is also used in the create and update functions, and it verifies if the password inputted matches the uid. This is just a validation system to make sure that people can't randomly modify or delete other people's data. Same thing for the find_by_uid(uid), instead of having to write out the code block to go through the database to check if the password matches the uid, you can just call the function. Both of these functions are procedures that validate something based on the chaging parameters, which are uid and password. It organizes the code and makes it easier for the user to use or understand it.</p>
+</li>
+<li>
+<p>Use Imperative or OOP style to Create a new Table or do something that applies to your CPT project.</p>
 </li>
 </ul>
 <p>Reference... <a href="https://www.sqlitetutorial.net/sqlite-python/creating-tables/">sqlite documentation</a></p>
@@ -544,7 +697,7 @@ window.onload = wrap_img;
 
 
 
-  </div><a class="u-url" href="/Aliya/2023/03/16/AP-unit2-4b.html" hidden></a>
+  </div><a class="u-url" href="/Aliya/week%2026/2023/03/16/AP-unit2-4b.html" hidden></a>
 </article>
 
       </div>
