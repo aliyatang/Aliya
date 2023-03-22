@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Unit 2.3 Extracting Information from Data, Pandas | Aliya’s Blog ✧/ᐠ-ꞈ-ᐟ\</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Unit 2.3 Extracting Information from Data, Pandas" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Data connections, trends, and correlation. Pandas is introduced as it could be valuable for PBL, data validation, as well as understanding College Board Topics." />
+<meta property="og:description" content="Data connections, trends, and correlation. Pandas is introduced as it could be valuable for PBL, data validation, as well as understanding College Board Topics." />
+<link rel="canonical" href="https://aliyatang.github.io/Aliya/week-25/big-idea-2/2023/03/09/AP-unit2-3-new.html" />
+<meta property="og:url" content="https://aliyatang.github.io/Aliya/week-25/big-idea-2/2023/03/09/AP-unit2-3-new.html" />
+<meta property="og:site_name" content="Aliya’s Blog ✧/ᐠ-ꞈ-ᐟ\" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-09T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Unit 2.3 Extracting Information from Data, Pandas" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-09T00:00:00-06:00","datePublished":"2023-03-09T00:00:00-06:00","description":"Data connections, trends, and correlation. Pandas is introduced as it could be valuable for PBL, data validation, as well as understanding College Board Topics.","headline":"Unit 2.3 Extracting Information from Data, Pandas","mainEntityOfPage":{"@type":"WebPage","@id":"https://aliyatang.github.io/Aliya/week-25/big-idea-2/2023/03/09/AP-unit2-3-new.html"},"url":"https://aliyatang.github.io/Aliya/week-25/big-idea-2/2023/03/09/AP-unit2-3-new.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/Aliya/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://aliyatang.github.io/Aliya/feed.xml" title="Aliya's Blog ✧/ᐠ-ꞈ-ᐟ\" /><link rel="shortcut icon" type="image/x-icon" href="/Aliya/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/Aliya/">Aliya&#39;s Blog ✧/ᐠ-ꞈ-ᐟ\</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/Aliya/Submenu/">Submenu</a><a class="page-link" href="/Aliya/about/">About Me</a><a class="page-link" href="/Aliya/notes/">Notes</a><a class="page-link" href="/Aliya/search/">Search</a><a class="page-link" href="/Aliya/table/">Table</a><a class="page-link" href="/Aliya/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Unit 2.3 Extracting Information from Data, Pandas</h1><p class="page-description">Data connections, trends, and correlation.  Pandas is introduced as it could be valuable for PBL, data validation, as well as understanding College Board Topics.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-03-09T00:00:00-06:00" itemprop="datePublished">
+        Mar 9, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      22 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/Aliya/categories/#Week-25">Week-25</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/Aliya/categories/#Big-Idea-2">Big-Idea-2</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/aliyatang/Aliya/tree/master/_notebooks/2023-03-09-AP-unit2-3-new.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/Aliya/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/aliyatang/Aliya/master?filepath=_notebooks%2F2023-03-09-AP-unit2-3-new.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Aliya/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/aliyatang/Aliya/blob/master/_notebooks/2023-03-09-AP-unit2-3-new.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Aliya/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Faliyatang%2FAliya%2Fblob%2Fmaster%2F_notebooks%2F2023-03-09-AP-unit2-3-new.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/Aliya/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Files-To-Get">Files To Get </a></li>
+<li class="toc-entry toc-h1"><a href="#Pandas-and-DataFrames">Pandas and DataFrames </a></li>
+<li class="toc-entry toc-h1"><a href="#Cleaning-Data">Cleaning Data </a></li>
+<li class="toc-entry toc-h1"><a href="#Extracting-Info">Extracting Info </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#DataFrame-Extract-Column">DataFrame Extract Column </a></li>
+<li class="toc-entry toc-h2"><a href="#DataFrame-Sort">DataFrame Sort </a></li>
+<li class="toc-entry toc-h2"><a href="#DataFrame-Selection-or-Filter">DataFrame Selection or Filter </a></li>
+<li class="toc-entry toc-h2"><a href="#DataFrame-Selection-Max-and-Min">DataFrame Selection Max and Min </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Create-your-own-DataFrame">Create your own DataFrame </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Python-Dictionary-to-Pandas-DataFrame">Python Dictionary to Pandas DataFrame </a></li>
+<li class="toc-entry toc-h2"><a href="#Examine-DataFrame-Rows">Examine DataFrame Rows </a></li>
+<li class="toc-entry toc-h2"><a href="#Pandas-DataFrame-Information">Pandas DataFrame Information </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Example-of-larger-data-set">Example of larger data set </a></li>
+<li class="toc-entry toc-h1"><a href="#APIs-are-a-Source-for-Writing-Programs-with-Data">APIs are a Source for Writing Programs with Data </a></li>
+<li class="toc-entry toc-h1"><a href="#Hacks">Hacks </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Hack-Helpers">Hack Helpers </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Personal-Data-Test-(PURRDLE-CAFEGATO)">Personal Data Test (PURRDLE CAFEGATO) </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Data-Sorting-by-Score">Data Sorting by Score </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Iris-Data-(my-test)">Iris Data (my test) </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Iris-mean,-median,-mode,-max,-and-min">Iris mean, median, mode, max, and min </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Titanic-Data-(SAMPLE)">Titanic Data (SAMPLE) </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Machine-Learning">Machine Learning </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-03-09-AP-unit2-3-new.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Files-To-Get">
+<a class="anchor" href="#Files-To-Get" aria-hidden="true"><span class="octicon octicon-link"></span></a>Files To Get<a class="anchor-link" href="#Files-To-Get"> </a>
+</h1>
+<p>Save this file to your <strong>_notebooks</strong> folder</p>
+<p>wget <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/2023-03-09-AP-unit2-3.ipynb">https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/2023-03-09-AP-unit2-3.ipynb</a></p>
+<p>Save these files into a subfolder named <strong>files</strong> in your <strong>_notebooks</strong> folder</p>
+<p>wget <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/files/data.csv">https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/files/data.csv</a></p>
+<p>wget <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/files/grade.json">https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/files/grade.json</a></p>
+<p>Save this image into a subfolder named <strong>images</strong> in your <strong>_notebooks</strong> folder</p>
+<p>wget <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/images/table_dataframe.png">https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/images/table_dataframe.png</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Pandas-and-DataFrames">
+<a class="anchor" href="#Pandas-and-DataFrames" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pandas and DataFrames<a class="anchor-link" href="#Pandas-and-DataFrames"> </a>
+</h1>
+<blockquote>
+<p>In this lesson we will be exploring data analysis using Pandas.</p>
+</blockquote>
+<ul>
+<li>College Board talks about ideas like <ul>
+<li>Tools. "the ability to process data depends on users capabilities and their tools"</li>
+<li>Combining Data.  "combine county data sets"</li>
+<li>Status on Data"determining the artist with the greatest attendance during a particular month"</li>
+<li>Data poses challenge. "the need to clean data", "incomplete data"</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href="https://pandas.pydata.org/docs/getting_started/index.html">From Pandas Overview</a> -- When working with tabular data, such as data stored in spreadsheets or databases, pandas is the right tool for you. pandas will help you to explore, clean, and process your data. In pandas, a data table is called a DataFrame.</li>
+</ul>
+<p><img src="/Aliya/images/copied_from_nb/images/table_dataframe.png" alt="DataFrame"></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">'''Pandas is used to gather data sets through its DataFrames implementation'''</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Cleaning-Data">
+<a class="anchor" href="#Cleaning-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cleaning Data<a class="anchor-link" href="#Cleaning-Data"> </a>
+</h1>
+<p>When looking at a data set, check to see what data needs to be cleaned. Examples include:</p>
+<ul>
+<li>Missing Data Points</li>
+<li>Invalid Data</li>
+<li>Inaccurate Data</li>
+</ul>
+<p>Run the following code to see what needs to be cleaned</p>
+<p>Some invalid data inputs would be the "nil" in the student ID, which should only conssit of numbers. Also the Junior and 9th grade, as they are not numerical inputs. The 4th user's GPA may also be incorrect, as a GPA of 4.75 is quite unlikely and could be a mistype? These invalid datas need to be cleaned.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">'files/grade.json'</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="c1"># What part of the data set needs to be cleaned?</span>
+<span class="c1"># From PBL learning, what is a good time to clean data?  Hint, remember Garbage in, Garbage out?</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>   Student ID Year in School   GPA
+0         123             12  3.57
+1         246             10  4.00
+2         578             12  2.78
+3         469             11  3.45
+4         324         Junior  4.75
+5         313             20  3.33
+6         145             12  2.95
+7         167             10  3.90
+8         235      9th Grade  3.15
+9         nil              9  2.80
+10        469             11  3.45
+11        456             10  2.75
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Extracting-Info">
+<a class="anchor" href="#Extracting-Info" aria-hidden="true"><span class="octicon octicon-link"></span></a>Extracting Info<a class="anchor-link" href="#Extracting-Info"> </a>
+</h1>
+<p>Take a look at some features that the Pandas library has that extracts info from the dataset</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DataFrame-Extract-Column">
+<a class="anchor" href="#DataFrame-Extract-Column" aria-hidden="true"><span class="octicon octicon-link"></span></a>DataFrame Extract Column<a class="anchor-link" href="#DataFrame-Extract-Column"> </a>
+</h2>
+<p>This column extracts the user ID based on the GPA of the student. This could be an issue if there are duplicate GPA, because it is possible to students have the same GPA.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">'GPA'</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1">#try two columns and remove the index from print statement</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">'Student ID'</span><span class="p">,</span><span class="s1">'GPA'</span><span class="p">]]</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>     GPA
+0   3.57
+1   4.00
+2   2.78
+3   3.45
+4   4.75
+5   3.33
+6   2.95
+7   3.90
+8   3.15
+9   2.80
+10  3.45
+11  2.75
+
+Student ID  GPA
+       123 3.57
+       246 4.00
+       578 2.78
+       469 3.45
+       324 4.75
+       313 3.33
+       145 2.95
+       167 3.90
+       235 3.15
+       nil 2.80
+       469 3.45
+       456 2.75
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DataFrame-Sort">
+<a class="anchor" href="#DataFrame-Sort" aria-hidden="true"><span class="octicon octicon-link"></span></a>DataFrame Sort<a class="anchor-link" href="#DataFrame-Sort"> </a>
+</h2>
+<p>This code organizes the users from highest GPA to lowest GPA.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'GPA'</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1">#sort the values in reverse order</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'GPA'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>   Student ID Year in School   GPA
+11        456             10  2.75
+2         578             12  2.78
+9         nil              9  2.80
+6         145             12  2.95
+8         235      9th Grade  3.15
+5         313             20  3.33
+3         469             11  3.45
+10        469             11  3.45
+0         123             12  3.57
+7         167             10  3.90
+1         246             10  4.00
+4         324         Junior  4.75
+
+   Student ID Year in School   GPA
+4         324         Junior  4.75
+1         246             10  4.00
+7         167             10  3.90
+0         123             12  3.57
+3         469             11  3.45
+10        469             11  3.45
+5         313             20  3.33
+8         235      9th Grade  3.15
+6         145             12  2.95
+9         nil              9  2.80
+2         578             12  2.78
+11        456             10  2.75
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DataFrame-Selection-or-Filter">
+<a class="anchor" href="#DataFrame-Selection-or-Filter" aria-hidden="true"><span class="octicon octicon-link"></span></a>DataFrame Selection or Filter<a class="anchor-link" href="#DataFrame-Selection-or-Filter"> </a>
+</h2>
+<p>This code only displays studnets who have a GPA greater than 3.00</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">GPA</span> <span class="o">&gt;</span> <span class="mf">3.00</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>   Student ID Year in School   GPA
+0         123             12  3.57
+1         246             10  4.00
+3         469             11  3.45
+4         324         Junior  4.75
+5         313             20  3.33
+7         167             10  3.90
+8         235      9th Grade  3.15
+10        469             11  3.45
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DataFrame-Selection-Max-and-Min">
+<a class="anchor" href="#DataFrame-Selection-Max-and-Min" aria-hidden="true"><span class="octicon octicon-link"></span></a>DataFrame Selection Max and Min<a class="anchor-link" href="#DataFrame-Selection-Max-and-Min"> </a>
+</h2>
+<p>This code searches the data to find the highest GPA and lowest GPA students and displays them.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">GPA</span> <span class="o">==</span> <span class="n">df</span><span class="o">.</span><span class="n">GPA</span><span class="o">.</span><span class="n">max</span><span class="p">()])</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">GPA</span> <span class="o">==</span> <span class="n">df</span><span class="o">.</span><span class="n">GPA</span><span class="o">.</span><span class="n">min</span><span class="p">()])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>  Student ID Year in School   GPA
+4        324         Junior  4.75
+
+   Student ID Year in School   GPA
+11        456             10  2.75
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Create-your-own-DataFrame">
+<a class="anchor" href="#Create-your-own-DataFrame" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create your own DataFrame<a class="anchor-link" href="#Create-your-own-DataFrame"> </a>
+</h1>
+<p>Using Pandas allows you to create your own DataFrame in Python.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Python-Dictionary-to-Pandas-DataFrame">
+<a class="anchor" href="#Python-Dictionary-to-Pandas-DataFrame" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python Dictionary to Pandas DataFrame<a class="anchor-link" href="#Python-Dictionary-to-Pandas-DataFrame"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Tnis display the day number, instead of just a number so you know what context the number is</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1">#the data can be stored as a python dictionary</span>
+<span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"calories"</span><span class="p">:</span> <span class="p">[</span><span class="mi">420</span><span class="p">,</span> <span class="mi">380</span><span class="p">,</span> <span class="mi">390</span><span class="p">],</span>
+  <span class="s2">"duration"</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">45</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="c1">#stores the data in a data frame</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-------------Dict_to_DF------------------"</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"----------Dict_to_DF_labels--------------"</span><span class="p">)</span>
+
+<span class="c1">#or with the index argument, you can label rows.</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"day1"</span><span class="p">,</span> <span class="s2">"day2"</span><span class="p">,</span> <span class="s2">"day3"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-------------Dict_to_DF------------------
+   calories  duration
+0       420        50
+1       380        40
+2       390        45
+----------Dict_to_DF_labels--------------
+      calories  duration
+day1       420        50
+day2       380        40
+day3       390        45
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Examine-DataFrame-Rows">
+<a class="anchor" href="#Examine-DataFrame-Rows" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examine DataFrame Rows<a class="anchor-link" href="#Examine-DataFrame-Rows"> </a>
+</h2>
+<p>This selects one of the rows within the data and only displays that info. This is useful if you are only trying to see one specific data instead of having to display all of it and scroll through the find the desired one.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"-------Examine Selected Rows---------"</span><span class="p">)</span>
+<span class="c1">#use a list for multiple labels:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">"day1"</span><span class="p">,</span> <span class="s2">"day3"</span><span class="p">]])</span>
+
+<span class="c1">#refer to the row index:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"--------Examine Single Row-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"day1"</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-------Examine Selected Rows---------
+      calories  duration
+day1       420        50
+day3       390        45
+--------Examine Single Row-----------
+calories    420
+duration     50
+Name: day1, dtype: int64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Pandas-DataFrame-Information">
+<a class="anchor" href="#Pandas-DataFrame-Information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pandas DataFrame Information<a class="anchor-link" href="#Pandas-DataFrame-Information"> </a>
+</h2>
+<p>This prints more in detail info about the selected dataset. For example, it dispalys the type and memory.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Index: 3 entries, day1 to day3
+Data columns (total 2 columns):
+ #   Column    Non-Null Count  Dtype
+---  ------    --------------  -----
+ 0   calories  3 non-null      int64
+ 1   duration  3 non-null      int64
+dtypes: int64(2)
+memory usage: 180.0+ bytes
+None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Example-of-larger-data-set">
+<a class="anchor" href="#Example-of-larger-data-set" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example of larger data set<a class="anchor-link" href="#Example-of-larger-data-set"> </a>
+</h1>
+<p>Pandas can read CSV and many other types of files, run the following code to see more features with a larger data set</p>
+<p>This looks like a dataset about tracking fitness or something of the sort. Immediately, I note that it has more data and more specific values.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1">#read csv and sort 'Duration' largest to smallest</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'files/data.csv'</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'Duration'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"--Duration Top 10---------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"--Duration Bottom 10------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>--Duration Top 10---------
+     Duration  Pulse  Maxpulse  Calories
+69        300    108       143    1500.2
+79        270    100       131    1729.0
+109       210    137       184    1860.4
+60        210    108       160    1376.0
+106       180     90       120     800.3
+90        180    101       127     600.1
+65        180     90       130     800.4
+61        160    110       137    1034.4
+62        160    109       135     853.0
+67        150    107       130     816.0
+--Duration Bottom 10------
+     Duration  Pulse  Maxpulse  Calories
+68         20    106       136     110.4
+100        20     95       112      77.7
+89         20     83       107      50.3
+135        20    136       156     189.0
+94         20    150       171     127.4
+95         20    151       168     229.4
+139        20    141       162     222.4
+64         20    110       130     131.4
+112        15    124       139     124.2
+93         15     80       100      50.5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="APIs-are-a-Source-for-Writing-Programs-with-Data">
+<a class="anchor" href="#APIs-are-a-Source-for-Writing-Programs-with-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>APIs are a Source for Writing Programs with Data<a class="anchor-link" href="#APIs-are-a-Source-for-Writing-Programs-with-Data"> </a>
+</h1>
+<blockquote>
+<p>3rd Party APIs are a great source for creating Pandas Data Frames.</p>
+<ul>
+<li>Data can be fetched and resulting json can be placed into a Data Frame</li>
+<li>Observe output, this looks very similar to a Database</li>
+</ul>
+</blockquote>
+<p>Implement our knowledge of APIs from the class to apply to creating Pandas Data Frames</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">'''Pandas can be used to analyze data'''</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="k">def</span> <span class="nf">fetch</span><span class="p">():</span>
+    <span class="sd">'''Obtain data from an endpoint'''</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://flask.nighthawkcodingsociety.com/api/covid/"</span>
+    <span class="n">fetch</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">json</span> <span class="o">=</span> <span class="n">fetch</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="c1"># filter data for requirement</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">'countries_stat'</span><span class="p">])</span>  <span class="c1"># filter endpoint for country stats</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'country_name'</span><span class="p">:</span><span class="s1">'deaths'</span><span class="p">])</span> <span class="c1"># show row 0 through 5 and columns country_name through deaths</span>
+    
+<span class="n">fetch</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>  country_name       cases     deaths
+0          USA  82,649,779  1,018,316
+1        India  43,057,545    522,193
+2       Brazil  30,345,654    662,663
+3       France  28,244,977    145,020
+4      Germany  24,109,433    134,624
+5           UK  21,933,206    173,352
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Hacks">
+<a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
+</h1>
+<blockquote>
+<p>Early Seed award</p>
+<ul>
+<li>Add this Blog to you own Blogging site.</li>
+<li>Have all lecture files saved to your files directory before Tech Talk starts. Have data.csv open in vscode. Don't tell anyone. Show to Teacher.</li>
+</ul>
+<p>AP Prep</p>
+<ul>
+<li>Add this Blog to you own Blogging site.  In the Blog add notes and observations on each code cell.</li>
+<li>In blog add College Board practice problems for 2.3.
+<img src="https://github.com/aliyatang/Aliya/blob/master/images/2023-03-12-pic2.png?raw=true" alt="This is an image">
+Overall, this talks about challenges and ways to analyzing data in tables. 
+The next 4 weeks, Teachers want you to improve your understanding of data.  Look at the blog and others on Unit 2.  Your intention is to find some things to differentiate your individual College Board project.</li>
+<li>Create or Find your own dataset.  The suggestion is to use a JSON file, integrating with your PBL project would be <strong><em>Fambulous</em></strong>.</li>
+</ul>
+</blockquote>
+
+<pre><code>When choosing a data set, think about the following:- Does it have a good sample size?    - Is there bias in the data?
+- Does the data set need to be cleaned?
+- What is the purpose of the data set?
+- ...
+</code></pre>
+<ul>
+<li>Continue this Blog using Pandas extract info from that dataset (ex. max, min, mean, median, mode, etc.)</li>
+</ul>
+<h2 id="Hack-Helpers">
+<a class="anchor" href="#Hack-Helpers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hack Helpers<a class="anchor-link" href="#Hack-Helpers"> </a>
+</h2>
+<blockquote>
+<p>Here is how Mort started on this assignment by asking ChatGPT  ... Regarding Python Pandas, what are some data sets that would be good for learning Pandas?</p>
+</blockquote>
+<ul>
+<li>
+<p>There are many data sets that are suitable for learning pandas, depending on your interests and the skills you want to develop. Here are some suggestions:- Titanic Dataset: This is a classic dataset for data analysis and machine learning, and is often used as an introduction to pandas. The dataset contains information about passengers on the Titanic, including their demographics, ticket class, and survival status.</p>
+<ul>
+<li>
+<p>Iris Dataset: This is another classic dataset that is often used in machine learning and data analysis courses. The dataset contains information about iris flowers, including their sepal length, sepal width, petal length, and petal width.</p>
+</li>
+<li>
+<p>NBA Player Stats: This dataset contains information about NBA players, including their stats for various games, their positions, and their salaries. It is a great dataset for learning how to clean and manipulate data using pandas.</p>
+</li>
+<li>
+<p>Housing Prices Dataset: This dataset contains information about housing prices in a particular city or region, including variables such as the number of bedrooms, square footage, and price. It is a great dataset for learning how to manipulate and analyze numerical data using pandas.</p>
+</li>
+<li>
+<p>COVID-19 Dataset: This dataset contains information about the COVID-19 pandemic, including the number of cases, deaths, and recoveries in various countries and regions. It is a great dataset for learning how to manipulate and analyze time-series data using pandas.</p>
+</li>
+<li>
+<p>World Bank Dataset: This dataset contains information about economic indicators from various countries, such as GDP, population, and poverty rates. It is a great dataset for learning how to manipulate and analyze large datasets using pandas.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>These are just a few examples of the many datasets that are suitable for learning pandas. The best dataset for you will depend on your interests and the specific skills you want to develop.</p>
+<blockquote>
+<p>Follow up question, "where can I find Titanic data set?"</p>
+</blockquote>
+</li>
+<li>
+<p>The Titanic dataset is a popular dataset for data analysis and machine learning, and it can be found on various websites and data repositories. Here are a few places where you can find the Titanic dataset:- Kaggle: The Titanic dataset is available on Kaggle, which is a popular platform for data scientists and machine learning enthusiasts. You can download the dataset from the Kaggle website after creating an account.</p>
+<ul>
+<li>
+<p>UCI Machine Learning Repository: The Titanic dataset is also available on the UCI Machine Learning Repository, which is a collection of datasets that are commonly used for machine learning research. You can download the dataset from the UCI Machine Learning Repository website.</p>
+</li>
+<li>
+<p>Seaborn library: If you have the Seaborn library installed in your Python environment, you can load the Titanic dataset directly from the library using the following code:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">titanic_data</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">'titanic'</span><span class="p">)</span>
+</pre></div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Personal-Data-Test-(PURRDLE-CAFEGATO)">
+<a class="anchor" href="#Personal-Data-Test-(PURRDLE-CAFEGATO)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Personal Data Test (PURRDLE CAFEGATO)<a class="anchor-link" href="#Personal-Data-Test-(PURRDLE-CAFEGATO)"> </a>
+</h3>
+<ul>
+<li>Does it have a good sample size?</li>
+</ul>
+<p>Currently, no, but I can add more samples.</p>
+<ul>
+<li>Is there bias in the data?</li>
+</ul>
+<p>There may be bias if someone lies about their score.</p>
+<ul>
+<li>Does the data set need to be cleaned?</li>
+</ul>
+<p>The data set already has filterations when data is first being inputted by user.</p>
+<ul>
+<li>What is the purpose of the data set?</li>
+</ul>
+<p>To show the data of the scores of the people who play the Purrlde Cafegato game.</p>
+<p>My Purrdle dataset isn't too good so I will be doing iris dataset below. I just wanted to test out some things with Purrdle score data.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="k">def</span> <span class="nf">fetch</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">eventdf</span>
+    <span class="sd">'''Obtain data from an endpoint'''</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://cgato.duckdns.org/api/wordles/"</span>
+    <span class="n">fetch</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">json</span> <span class="o">=</span> <span class="n">fetch</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="c1"># filter data for requirement</span>
+    <span class="n">wordledf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>  <span class="c1"># filter endpoint for country stats</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">wordledf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span> <span class="c1"># show row 0 through 5</span>
+    
+<span class="n">fetch</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>   id     name   pin score
+0   1    Aliya  1234     2
+1   2   Claire   123     5
+2   3      Jie    12     3
+3   4     Drew   321     2
+4   5  Tanisha   567     1
+5   6   Sreeja  8901     4
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Data-Sorting-by-Score">
+<a class="anchor" href="#Data-Sorting-by-Score" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Sorting by Score<a class="anchor-link" href="#Data-Sorting-by-Score"> </a>
+</h4>
+<p>Lowest number to highest number - in Wordle, low score ideal as smaller number of guesses</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="k">global</span> <span class="n">eventdf</span>
+<span class="sd">'''Obtain data from an endpoint'''</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://cgato.duckdns.org/api/wordles/"</span>
+<span class="n">fetch</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">json</span> <span class="o">=</span> <span class="n">fetch</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="n">wordledf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">wordledf</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'score'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>   id     name   pin score
+4   5  Tanisha   567     1
+0   1    Aliya  1234     2
+3   4     Drew   321     2
+2   3      Jie    12     3
+5   6   Sreeja  8901     4
+1   2   Claire   123     5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Iris-Data-(my-test)">
+<a class="anchor" href="#Iris-Data-(my-test)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Iris Data (my test)<a class="anchor-link" href="#Iris-Data-(my-test)"> </a>
+</h3>
+<ul>
+<li>
+<p>Does it have a good sample size?
+Yes, there is much data about several kinds of iris flowers (150 samples of data of flower)</p>
+</li>
+<li>
+<p>Is there bias in the data?
+No, there is no bias. The measurements of flower is fact so there is no bias possible and it is trustworthy source.</p>
+</li>
+<li>
+<p>Does the data set need to be cleaned?
+No, all the values are correct.</p>
+</li>
+<li>
+<p>What is the purpose of the data set?
+To show the different sizes of the kinds of iris flower petals and sepals.</p>
+</li>
+</ul>
+<p>Finding max, min, mean, median, mode etc. of Iris Data</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">csv_url</span> <span class="o">=</span> <span class="s1">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span>
+<span class="c1"># using the attribute information as the column names</span>
+<span class="n">col_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Sepal_Length'</span><span class="p">,</span><span class="s1">'Sepal_Width'</span><span class="p">,</span><span class="s1">'Petal_Length'</span><span class="p">,</span><span class="s1">'Petal_Width'</span><span class="p">,</span><span class="s1">'Class'</span><span class="p">]</span>
+<span class="n">iris</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_url</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="n">col_names</span><span class="p">)</span>
+
+<span class="n">irisdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">irisdf</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>     Sepal_Length  Sepal_Width  Petal_Length  Petal_Width           Class
+0             5.1          3.5           1.4          0.2     Iris-setosa
+1             4.9          3.0           1.4          0.2     Iris-setosa
+2             4.7          3.2           1.3          0.2     Iris-setosa
+3             4.6          3.1           1.5          0.2     Iris-setosa
+4             5.0          3.6           1.4          0.2     Iris-setosa
+..            ...          ...           ...          ...             ...
+145           6.7          3.0           5.2          2.3  Iris-virginica
+146           6.3          2.5           5.0          1.9  Iris-virginica
+147           6.5          3.0           5.2          2.0  Iris-virginica
+148           6.2          3.4           5.4          2.3  Iris-virginica
+149           5.9          3.0           5.1          1.8  Iris-virginica
+
+[150 rows x 5 columns]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Iris-mean,-median,-mode,-max,-and-min">
+<a class="anchor" href="#Iris-mean,-median,-mode,-max,-and-min" aria-hidden="true"><span class="octicon octicon-link"></span></a>Iris mean, median, mode, max, and min<a class="anchor-link" href="#Iris-mean,-median,-mode,-max,-and-min"> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Mean:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Median:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">median</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Mode:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">mode</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Max:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Min:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Mean:
+Sepal_Length    5.843333
+Sepal_Width     3.054000
+Petal_Length    3.758667
+Petal_Width     1.198667
+dtype: float64
+Median:
+Sepal_Length    5.80
+Sepal_Width     3.00
+Petal_Length    4.35
+Petal_Width     1.30
+dtype: float64
+Mode:
+   Sepal_Length  Sepal_Width  Petal_Length  Petal_Width            Class
+0           5.0          3.0           1.5          0.2      Iris-setosa
+1           NaN          NaN           NaN          NaN  Iris-versicolor
+2           NaN          NaN           NaN          NaN   Iris-virginica
+Max:
+Sepal_Length               7.9
+Sepal_Width                4.4
+Petal_Length               6.9
+Petal_Width                2.5
+Class           Iris-virginica
+dtype: object
+Min:
+Sepal_Length            4.3
+Sepal_Width             2.0
+Petal_Length            1.0
+Petal_Width             0.1
+Class           Iris-setosa
+dtype: object
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/var/folders/h6/z_st21kd1bj6l0f07rpnsdrm0000gn/T/ipykernel_57420/1574759988.py:2: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with 'numeric_only=None') is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
+  print(iris.mean())
+/var/folders/h6/z_st21kd1bj6l0f07rpnsdrm0000gn/T/ipykernel_57420/1574759988.py:5: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with 'numeric_only=None') is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
+  print(iris.median())
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Titanic-Data-(SAMPLE)">
+<a class="anchor" href="#Titanic-Data-(SAMPLE)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Titanic Data (SAMPLE)<a class="anchor-link" href="#Titanic-Data-(SAMPLE)"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Load the titanic dataset</span>
+<span class="n">titanic_data</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">'titanic'</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Titanic Data"</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">titanic_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="c1"># titanic data set</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">titanic_data</span><span class="p">[[</span><span class="s1">'survived'</span><span class="p">,</span><span class="s1">'pclass'</span><span class="p">,</span> <span class="s1">'sex'</span><span class="p">,</span> <span class="s1">'age'</span><span class="p">,</span> <span class="s1">'sibsp'</span><span class="p">,</span> <span class="s1">'parch'</span><span class="p">,</span> <span class="s1">'class'</span><span class="p">,</span> <span class="s1">'fare'</span><span class="p">,</span> <span class="s1">'embark_town'</span><span class="p">]])</span> <span class="c1"># look at selected columns</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Fontconfig warning: ignoring UTF-8: not a valid region tag
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Titanic Data
+Index(['survived', 'pclass', 'sex', 'age', 'sibsp', 'parch', 'fare',
+       'embarked', 'class', 'who', 'adult_male', 'deck', 'embark_town',
+       'alive', 'alone'],
+      dtype='object')
+     survived  pclass     sex   age  sibsp  parch   class     fare  \
+0           0       3    male  22.0      1      0   Third   7.2500   
+1           1       1  female  38.0      1      0   First  71.2833   
+2           1       3  female  26.0      0      0   Third   7.9250   
+3           1       1  female  35.0      1      0   First  53.1000   
+4           0       3    male  35.0      0      0   Third   8.0500   
+..        ...     ...     ...   ...    ...    ...     ...      ...   
+886         0       2    male  27.0      0      0  Second  13.0000   
+887         1       1  female  19.0      0      0   First  30.0000   
+888         0       3  female   NaN      1      2   Third  23.4500   
+889         1       1    male  26.0      0      0   First  30.0000   
+890         0       3    male  32.0      0      0   Third   7.7500   
+
+     embark_town  
+0    Southampton  
+1      Cherbourg  
+2    Southampton  
+3    Southampton  
+4    Southampton  
+..           ...  
+886  Southampton  
+887  Southampton  
+888  Southampton  
+889    Cherbourg  
+890   Queenstown  
+
+[891 rows x 9 columns]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Use Pandas to clean the data.  Most analysis, like Machine Learning or even Pandas in general like data to be in standardized format.  This is called 'Training' or 'Cleaning' data.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Preprocess the data</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
+
+
+<span class="n">td</span> <span class="o">=</span> <span class="n">titanic_data</span>
+<span class="n">td</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'alive'</span><span class="p">,</span> <span class="s1">'who'</span><span class="p">,</span> <span class="s1">'adult_male'</span><span class="p">,</span> <span class="s1">'class'</span><span class="p">,</span> <span class="s1">'embark_town'</span><span class="p">,</span> <span class="s1">'deck'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">td</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">td</span><span class="p">[</span><span class="s1">'sex'</span><span class="p">]</span> <span class="o">=</span> <span class="n">td</span><span class="p">[</span><span class="s1">'sex'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">'male'</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">td</span><span class="p">[</span><span class="s1">'alone'</span><span class="p">]</span> <span class="o">=</span> <span class="n">td</span><span class="p">[</span><span class="s1">'alone'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="kc">True</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Encode categorical variables</span>
+<span class="n">enc</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">'ignore'</span><span class="p">)</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">td</span><span class="p">[[</span><span class="s1">'embarked'</span><span class="p">]])</span>
+<span class="n">onehot</span> <span class="o">=</span> <span class="n">enc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">td</span><span class="p">[[</span><span class="s1">'embarked'</span><span class="p">]])</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'embarked_'</span> <span class="o">+</span> <span class="n">val</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">enc</span><span class="o">.</span><span class="n">categories_</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">td</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">onehot</span><span class="p">)</span>
+<span class="n">td</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'embarked'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">td</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">td</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>     survived  pclass  sex   age  sibsp  parch      fare  alone  embarked_C  \
+0           0       3    1  22.0      1      0    7.2500      0         0.0   
+1           1       1    0  38.0      1      0   71.2833      0         1.0   
+2           1       3    0  26.0      0      0    7.9250      1         0.0   
+3           1       1    0  35.0      1      0   53.1000      0         0.0   
+4           0       3    1  35.0      0      0    8.0500      1         0.0   
+..        ...     ...  ...   ...    ...    ...       ...    ...         ...   
+705         0       2    1  39.0      0      0   26.0000      1         0.0   
+706         1       2    0  45.0      0      0   13.5000      1         0.0   
+707         1       1    1  42.0      0      0   26.2875      1         0.0   
+708         1       1    0  22.0      0      0  151.5500      1         0.0   
+710         1       1    0  24.0      0      0   49.5042      1         1.0   
+
+     embarked_Q  embarked_S  
+0           0.0         1.0  
+1           0.0         0.0  
+2           0.0         1.0  
+3           0.0         1.0  
+4           0.0         1.0  
+..          ...         ...  
+705         0.0         1.0  
+706         0.0         1.0  
+707         1.0         0.0  
+708         0.0         1.0  
+710         0.0         0.0  
+
+[564 rows x 11 columns]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>The result of 'Training' data is making it easier to analyze or make conclusions.  In looking at the Titanic, as you clean you would probably want to make assumptions on likely chance of survival.</p>
+</blockquote>
+<p>This would involve analyzing various factors (such as age, gender, class, etc.) that may have affected a person's chances of survival, and using that information to make predictions about whether an individual would have survived or not.</p>
+<ul>
+<li>
+<p>Data description:- Survival - Survival (0 = No; 1 = Yes). Not included in test.csv file.    - Pclass - Passenger Class (1 = 1st; 2 = 2nd; 3 = 3rd)</p>
+<ul>
+<li>Name - Name</li>
+<li>Sex - Sex</li>
+<li>Age - Age</li>
+<li>Sibsp - Number of Siblings/Spouses Aboard</li>
+<li>Parch - Number of Parents/Children Aboard</li>
+<li>Ticket - Ticket Number</li>
+<li>Fare - Passenger Fare</li>
+<li>Cabin - Cabin</li>
+<li>Embarked - Port of Embarkation (C = Cherbourg; Q = Queenstown; S = Southampton)</li>
+</ul>
+</li>
+<li>
+<p>Perished Mean/Average</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">titanic_data</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"survived == 0"</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>survived       0.000000
+pclass         2.531876
+age           30.626179
+sibsp          0.553734
+parch          0.329690
+fare          22.117887
+adult_male     0.817851
+alone          0.681239
+dtype: float64
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/var/folders/h6/z_st21kd1bj6l0f07rpnsdrm0000gn/T/ipykernel_57420/190397174.py:1: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with 'numeric_only=None') is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
+  print(titanic_data.query("survived == 0").mean())
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Survived Mean/Average</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">titanic_data</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"survived == 1"</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>survived       1.000000
+pclass         1.950292
+age           28.343690
+sibsp          0.473684
+parch          0.464912
+fare          48.395408
+adult_male     0.257310
+alone          0.476608
+dtype: float64
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/var/folders/h6/z_st21kd1bj6l0f07rpnsdrm0000gn/T/ipykernel_57420/4015288643.py:1: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with 'numeric_only=None') is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
+  print(titanic_data.query("survived == 1").mean())
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Survived Max and Min Stats</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">titanic_data</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"survived == 1"</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">titanic_data</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"survived == 1"</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>survived             1
+pclass               3
+sex               male
+age               80.0
+sibsp                4
+parch                5
+fare          512.3292
+who              woman
+adult_male        True
+alive              yes
+alone             True
+dtype: object
+survived           1
+pclass             1
+sex           female
+age             0.42
+sibsp              0
+parch              0
+fare             0.0
+who            child
+adult_male     False
+alive            yes
+alone          False
+dtype: object
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/var/folders/h6/z_st21kd1bj6l0f07rpnsdrm0000gn/T/ipykernel_57420/1438667215.py:1: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with 'numeric_only=None') is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
+  print(titanic_data.query("survived == 1").max())
+/var/folders/h6/z_st21kd1bj6l0f07rpnsdrm0000gn/T/ipykernel_57420/1438667215.py:2: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with 'numeric_only=None') is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
+  print(titanic_data.query("survived == 1").min())
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Machine-Learning">
+<a class="anchor" href="#Machine-Learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Machine Learning<a class="anchor-link" href="#Machine-Learning"> </a>
+</h2>
+<blockquote>
+<p><a href="https://www.tutorialspoint.com/scikit_learn/scikit_learn_introduction.htm#:~:text=Scikit%2Dlearn%20(Sklearn">From Tutorials Point</a>%20is,a%20consistence%20interface%20in%20Python).  Scikit-learn (Sklearn) is the most useful and robust library for machine learning in Python. It provides a selection of efficient tools for machine learning and statistical modeling including classification, regression, clustering and dimensionality reduction via a consistence interface in Python.&gt; Description from ChatGPT. The Titanic dataset is a popular dataset for data analysis and machine learning. In the context of machine learning, accuracy refers to the percentage of correctly classified instances in a set of predictions. In this case, the testing data is a subset of the original Titanic dataset that the decision tree model has not seen during training......After training the decision tree model on the training data, we can evaluate its performance on the testing data by making predictions on the testing data and comparing them to the actual outcomes. The accuracy of the decision tree classifier on the testing data tells us how well the model generalizes to new data that it hasn't seen before......For example, if the accuracy of the decision tree classifier on the testing data is 0.8 (or 80%), this means that 80% of the predictions made by the model on the testing data were correct....Chance of survival could be done using various machine learning techniques, including decision trees, logistic regression, or support vector machines, among others.</p>
+</blockquote>
+<ul>
+<li>Code Below prepares data for further analysis and provides an Accuracy.  IMO, you would insert a new passenger and predict survival.  Datasets could be used on various factors like prediction if a player will hit a Home Run, or a Stock will go up or down.<ul>
+<li>
+<a href="https://scikit-learn.org/stable/modules/tree.html#tree">Decision Trees</a>, prediction by a piecewise constant approximation.    - <a href="https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression">Logistic Regression</a>, the probabilities describing the possible outcomes.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="n">td</span> <span class="o">=</span> <span class="n">titanic_data</span>
+
+<span class="c1"># Split arrays or matrices into random train and test subsets.</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">td</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'survived'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">td</span><span class="p">[</span><span class="s1">'survived'</span><span class="p">]</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Train a decision tree classifier</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Test the model</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'DecisionTreeClassifier Accuracy:'</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">)</span>
+
+<span class="c1"># Train a logistic regression model</span>
+<span class="n">logreg</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">logreg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Test the model</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">logreg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'LogisticRegression Accuracy:'</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">/Users/aliyatang/vscode/Aliya-1/_notebooks/2023-03-09-AP-unit2-3.ipynb Cell 40</span> in <span class="ansi-cyan-fg">&lt;cell line: 15&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell:/Users/aliyatang/vscode/Aliya-1/_notebooks/2023-03-09-AP-unit2-3.ipynb#X53sZmlsZQ%3D%3D?line=12'&gt;13&lt;/a&gt;</span> # Train a decision tree classifier
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell:/Users/aliyatang/vscode/Aliya-1/_notebooks/2023-03-09-AP-unit2-3.ipynb#X53sZmlsZQ%3D%3D?line=13'&gt;14&lt;/a&gt;</span> dt = DecisionTreeClassifier()
+<span class="ansi-green-fg">---&gt; &lt;a href='vscode-notebook-cell:/Users/aliyatang/vscode/Aliya-1/_notebooks/2023-03-09-AP-unit2-3.ipynb#X53sZmlsZQ%3D%3D?line=14'&gt;15&lt;/a&gt;</span> dt.fit(X_train, y_train)
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell:/Users/aliyatang/vscode/Aliya-1/_notebooks/2023-03-09-AP-unit2-3.ipynb#X53sZmlsZQ%3D%3D?line=16'&gt;17&lt;/a&gt;</span> # Test the model
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell:/Users/aliyatang/vscode/Aliya-1/_notebooks/2023-03-09-AP-unit2-3.ipynb#X53sZmlsZQ%3D%3D?line=17'&gt;18&lt;/a&gt;</span> y_pred = dt.predict(X_test)
+
+File <span class="ansi-green-fg">~/opt/anaconda3/lib/python3.9/site-packages/sklearn/tree/_classes.py:937</span>, in <span class="ansi-cyan-fg">DecisionTreeClassifier.fit</span><span class="ansi-blue-fg">(self, X, y, sample_weight, check_input, X_idx_sorted)</span>
+<span class="ansi-green-intense-fg ansi-bold">    899</span> def fit(
+<span class="ansi-green-intense-fg ansi-bold">    900</span>     self, X, y, sample_weight=None, check_input=True, X_idx_sorted="deprecated"
+<span class="ansi-green-intense-fg ansi-bold">    901</span> ):
+<span class="ansi-green-intense-fg ansi-bold">    902</span>     """Build a decision tree classifier from the training set (X, y).
+<span class="ansi-green-intense-fg ansi-bold">    903</span> 
+<span class="ansi-green-intense-fg ansi-bold">    904</span>     Parameters
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">    934</span>         Fitted estimator.
+<span class="ansi-green-intense-fg ansi-bold">    935</span>     """
+<span class="ansi-green-fg">--&gt; 937</span>     super().fit(
+<span class="ansi-green-intense-fg ansi-bold">    938</span>         X,
+<span class="ansi-green-intense-fg ansi-bold">    939</span>         y,
+<span class="ansi-green-intense-fg ansi-bold">    940</span>         sample_weight=sample_weight,
+<span class="ansi-green-intense-fg ansi-bold">    941</span>         check_input=check_input,
+<span class="ansi-green-intense-fg ansi-bold">    942</span>         X_idx_sorted=X_idx_sorted,
+<span class="ansi-green-intense-fg ansi-bold">    943</span>     )
+<span class="ansi-green-intense-fg ansi-bold">    944</span>     return self
+
+File <span class="ansi-green-fg">~/opt/anaconda3/lib/python3.9/site-packages/sklearn/tree/_classes.py:165</span>, in <span class="ansi-cyan-fg">BaseDecisionTree.fit</span><span class="ansi-blue-fg">(self, X, y, sample_weight, check_input, X_idx_sorted)</span>
+<span class="ansi-green-intense-fg ansi-bold">    163</span> check_X_params = dict(dtype=DTYPE, accept_sparse="csc")
+<span class="ansi-green-intense-fg ansi-bold">    164</span> check_y_params = dict(ensure_2d=False, dtype=None)
+<span class="ansi-green-fg">--&gt; 165</span> X, y = self._validate_data(
+<span class="ansi-green-intense-fg ansi-bold">    166</span>     X, y, validate_separately=(check_X_params, check_y_params)
+<span class="ansi-green-intense-fg ansi-bold">    167</span> )
+<span class="ansi-green-intense-fg ansi-bold">    168</span> if issparse(X):
+<span class="ansi-green-intense-fg ansi-bold">    169</span>     X.sort_indices()
+
+File <span class="ansi-green-fg">~/opt/anaconda3/lib/python3.9/site-packages/sklearn/base.py:578</span>, in <span class="ansi-cyan-fg">BaseEstimator._validate_data</span><span class="ansi-blue-fg">(self, X, y, reset, validate_separately, **check_params)</span>
+<span class="ansi-green-intense-fg ansi-bold">    572</span> if validate_separately:
+<span class="ansi-green-intense-fg ansi-bold">    573</span>     # We need this because some estimators validate X and y
+<span class="ansi-green-intense-fg ansi-bold">    574</span>     # separately, and in general, separately calling check_array()
+<span class="ansi-green-intense-fg ansi-bold">    575</span>     # on X and y isn't equivalent to just calling check_X_y()
+<span class="ansi-green-intense-fg ansi-bold">    576</span>     # :(
+<span class="ansi-green-intense-fg ansi-bold">    577</span>     check_X_params, check_y_params = validate_separately
+<span class="ansi-green-fg">--&gt; 578</span>     X = check_array(X, **check_X_params)
+<span class="ansi-green-intense-fg ansi-bold">    579</span>     y = check_array(y, **check_y_params)
+<span class="ansi-green-intense-fg ansi-bold">    580</span> else:
+
+File <span class="ansi-green-fg">~/opt/anaconda3/lib/python3.9/site-packages/sklearn/utils/validation.py:746</span>, in <span class="ansi-cyan-fg">check_array</span><span class="ansi-blue-fg">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator)</span>
+<span class="ansi-green-intense-fg ansi-bold">    744</span>         array = array.astype(dtype, casting="unsafe", copy=False)
+<span class="ansi-green-intense-fg ansi-bold">    745</span>     else:
+<span class="ansi-green-fg">--&gt; 746</span>         array = np.asarray(array, order=order, dtype=dtype)
+<span class="ansi-green-intense-fg ansi-bold">    747</span> except ComplexWarning as complex_warning:
+<span class="ansi-green-intense-fg ansi-bold">    748</span>     raise ValueError(
+<span class="ansi-green-intense-fg ansi-bold">    749</span>         "Complex data not supported\n{}\n".format(array)
+<span class="ansi-green-intense-fg ansi-bold">    750</span>     ) from complex_warning
+
+File <span class="ansi-green-fg">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py:2064</span>, in <span class="ansi-cyan-fg">NDFrame.__array__</span><span class="ansi-blue-fg">(self, dtype)</span>
+<span class="ansi-green-intense-fg ansi-bold">   2063</span> def __array__(self, dtype: npt.DTypeLike | None = None) -&gt; np.ndarray:
+<span class="ansi-green-fg">-&gt; 2064</span>     return np.asarray(self._values, dtype=dtype)
+
+<span class="ansi-red-fg">ValueError</span>: could not convert string to float: 'male'</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="aliyatang/Aliya"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/Aliya/week-25/big-idea-2/2023/03/09/AP-unit2-3-new.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/Aliya/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://aliyatang.github.io/Aliya/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/Aliya/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="” https://github.com/nighthawkcoders “" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/Aliya/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="” https://twitter.com/NighthawkCoding “" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/Aliya/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="” https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q “" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/Aliya/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
