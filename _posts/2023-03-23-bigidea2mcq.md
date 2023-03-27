@@ -36,5 +36,5 @@ For this one I first approached it with process of elimination, since the answer
 ![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2023-03-26-pic4.png?raw=true)
 The multiple/select two answers ones always confuse me some, this one especially. I had to figure out the hright order of filtering and sorting to get the desired entry. To do this I also used process of elimination. I first noticed that the no year ones would be ignored, meaning that there would have to be a filter by year in the steps. So I eliminated C. I also noticed that the photographer and year were the only relevant categories in this (not subject), so I eliminated A as well. That left me with B and D, which made sense too based on their orders it allowed for a entry that met the criteria for the name of the photographer of the oldest photograph. 
 
-
-
+## Reflect on problems:
+I definetly need to review the sample program problems where it asks which program is correct or what the output is the program is. The problem itself isn't too hard, but there are many components that you can get mixed up. Next time or on the AP test, it owuld definitely be helpful to have scratch paper to write down the steps so I can see it in front of me visually. Also, I think I just have to be more thorough when reading the problem, answer, or sample program. Many of the mistakes I made could have been easily avoidable if I just took some time to reread the content more carefully. 
