@@ -6,7 +6,7 @@ categories: [markdown, week 26]
 title: Big Idea 2 MCQ Reflection
 ---
 # Score: 23/25
-![This is an image]()
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2023-03-26-pic1.png?raw=true)
 
 # Problems I Got Wrong
 ## Q5
@@ -25,15 +25,15 @@ The total dollar amount of food an drinks sold could have a correlation/be relat
 
 # Problems I Had Trouble On
 ## Q14
-![This is an image]()
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2023-03-26-pic2.png?raw=true)
 This one confused me a little at first with the third option, becuase I thought that the teacher COULD determine if the students had higher grades based on information outside of the survey. However, it is important to notice that the survey is anonymous, meanign that the teacher can't detect any correlation between the survey information and the grades. 
 
 ## Q17
-![This is an image]()
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2023-03-26-pic3.png?raw=true)
 For this one I first approached it with process of elimination, since the answer choices were pretty long. I knew that A wasn't right becase you can't just add the seven greatest amoutns and divide to find the average. I also saw that B couldn't be correct because one person's payment method could be used for several different items, as in one person can buy a lot of different items. C confused me a little at first because I thought it was right because of the matching thing, however it also didn't make sense how it could sort if the individual item prices weren't in the store records. That left the last one, which made sense because it is just seeing the total number of items bought on a given date by going to that date then adding each number of items from all the transactions. 
 
 ## Q21
-![This is an image]()
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2023-03-26-pic4.png?raw=true)
 The multiple/select two answers ones always confuse me some, this one especially. I had to figure out the hright order of filtering and sorting to get the desired entry. To do this I also used process of elimination. I first noticed that the no year ones would be ignored, meaning that there would have to be a filter by year in the steps. So I eliminated C. I also noticed that the photographer and year were the only relevant categories in this (not subject), so I eliminated A as well. That left me with B and D, which made sense too based on their orders it allowed for a entry that met the criteria for the name of the photographer of the oldest photograph. 
 
 
