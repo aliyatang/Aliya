@@ -12,7 +12,6 @@ title: CSUSM Presentation
 - John started at Palomar college after highschool, then transferred to CSUSM right when COVID hit
 - Computer science very important, used in many different STEM fields and is very versatile
 
-
 # CSUSM STEM - Cal State San Marcos
 - CSUSM has a small campus so you have a great support system and more room to constantly change curriculum
 - Highest turnover for Cal State College
@@ -28,7 +27,6 @@ title: CSUSM Presentation
 # Paying for College
 - Grant: government paid, depends on family income
 - Scholarship: privately funded, you have to look for them yourself
-- Grades matter
 - Loans: try to avoid getting a loan, but if you have to there are two types, subsidized and ubsubsidized
 - Subsidized: You don't have to worry about interest until 6 months after you graduate
 - Ubsubsidized: Interest accumulates right when you graduate
@@ -36,3 +34,6 @@ title: CSUSM Presentation
 # Life After CSUSM
 - Graduate school
 - Teaching programs
+
+# Takeaways/Reflection
+A key takeaway I had from this presentation was the understanding that your failures don't define you. When listening to Ashley's experiences of struggling and failing classes, I saw that she was able to openly talk about these failures. She didn't let these failures define her, instead, she kept moving forward, using it to learn and grow as a person. I admire her ability to talk so openly about her experience. It showed me that even though grades are important in some aspects of academic success, it isn't the defining factor in someone's success. You shouldn't fear or stop doing what you love just because of a letter in the grade book. 
