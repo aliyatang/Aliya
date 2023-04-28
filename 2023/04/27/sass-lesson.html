@@ -441,35 +441,55 @@ border-radius: 2em;
 <li>Extend and mixin to achieve same result: button with blue background color and white text color</li>
 <li>"button" class, base style set as blue background color and white text color</li>
 <li>First example: CSS class extend from "button" class, creating "special-button" class that adds red border to the button</li>
-<li>Second example: SASS mixin, "button-style" defines blue and wwhite colors inluded in both "button" and "special-button", "special-button" also adds red border
-```
-button {
-background-color: blue;
-color: white;
-}</li>
+<li>Second example: SASS mixin, "button-style" defines blue and wwhite colors inluded in both "button" and "special-button", "special-button" also adds red border</li>
 </ul>
-<p>.special-button {
-  @extend button;
-  border: 1px solid red;
-}</p>
-
-<pre><code>OR</code></pre>
-<p>@mixin button-style {
-  background-color: blue;
-  color: white;
-}</p>
-<p>button {
-  @include button-style;
-}</p>
-<p>.special-button {
-  @include button-style;
-  border: 1px solid red;
-}
-```</p>
 
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">button</span> <span class="p">{</span>
+  <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">blue</span><span class="p">;</span>
+  <span class="n">color</span><span class="p">:</span> <span class="n">white</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">.</span><span class="n">special</span><span class="o">-</span><span class="n">button</span> <span class="p">{</span>
+  <span class="nd">@extend</span> <span class="n">button</span><span class="p">;</span>
+  <span class="n">border</span><span class="p">:</span> <span class="mi">1</span><span class="n">px</span> <span class="n">solid</span> <span class="n">red</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="n">OR</span>
+
+
+<span class="nd">@mixin</span> <span class="n">button</span><span class="o">-</span><span class="n">style</span> <span class="p">{</span>
+  <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">blue</span><span class="p">;</span>
+  <span class="n">color</span><span class="p">:</span> <span class="n">white</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">button</span> <span class="p">{</span>
+  <span class="nd">@include</span> <span class="n">button</span><span class="o">-</span><span class="n">style</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">.</span><span class="n">special</span><span class="o">-</span><span class="n">button</span> <span class="p">{</span>
+  <span class="nd">@include</span> <span class="n">button</span><span class="o">-</span><span class="n">style</span><span class="p">;</span>
+  <span class="n">border</span><span class="p">:</span> <span class="mi">1</span><span class="n">px</span> <span class="n">solid</span> <span class="n">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
