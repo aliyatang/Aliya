@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -173,12 +173,13 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Data-types--there-are-8-JS-data-types.">Data types- there are 8 JS data types.<a class="anchor-link" href="#Data-types--there-are-8-JS-data-types."> </a></h3><ul>
-<li>List a few data types that you already know
-&gt;
-&gt;<blockquote>
-</blockquote>
-</li>
+<h3 id="Data-types--there-are-8-JS-data-types.">Data types- there are 8 JS data types.<a class="anchor-link" href="#Data-types--there-are-8-JS-data-types."> </a></h3><p>List a few data types that you already know</p>
+<ul>
+<li>Integer</li>
+<li>Float</li>
+<li>String</li>
+<li>Array</li>
+<li>Boolean</li>
 </ul>
 
 </div>
@@ -357,7 +358,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-javascript"><pre><span></span><span class="nb">Boolean</span><span class="p">(</span><span class="mf">10</span> <span class="o">&gt;</span> <span class="mf">9</span><span class="p">)</span>
+<div class=" highlight hl-javascript"><pre><span></span><span class="nb">Boolean</span><span class="p">(</span><span class="mf">10</span> <span class="o">&lt;</span> <span class="mf">9</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -390,6 +391,39 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="nb">Boolean</span><span class="p">(</span><span class="mf">1</span> <span class="o">&gt;</span> <span class="mf">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>true</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="5.-Undefined:-a-variable-without-a-value,-has-the-value-undefined/empty-values">5. Undefined: a variable without a value, has the value undefined/empty values<a class="anchor-link" href="#5.-Undefined:-a-variable-without-a-value,-has-the-value-undefined/empty-values"> </a></h4>
@@ -495,9 +529,9 @@ false
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-javascript"><pre><span></span><span class="c1">// Create a Symbol</span>
-<span class="kr">const</span> <span class="nx">mySymbol</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">mySymbo</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">();</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mySymbol</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mySymbo</span><span class="p">);</span>
 <span class="c1">// expected output: Symbol()</span>
 </pre></div>
 
@@ -529,11 +563,11 @@ false
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-javascript"><pre><span></span><span class="kr">const</span> <span class="nx">myObject</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="p">[</span><span class="nx">mySymbol</span><span class="p">]</span><span class="o">:</span> <span class="s1">&#39;Hello World&#39;</span>
+<div class=" highlight hl-javascript"><pre><span></span><span class="kr">const</span> <span class="nx">myObjetc</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">mySymbo</span><span class="p">]</span><span class="o">:</span> <span class="s1">&#39;Hello World&#39;</span>
   <span class="p">};</span>
   
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myObject</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myObjetc</span><span class="p">[</span><span class="nx">mySymbo</span><span class="p">]);</span>
 </pre></div>
 
     </div>
@@ -546,7 +580,7 @@ false
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{ [Symbol()]: &#39;Hello World&#39; }
+<pre>Hello World
 </pre>
 </div>
 </div>
@@ -577,8 +611,8 @@ false
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Object</p>
 <ul>
-<li>Identify the name/keys in the object below: <strong><strong>, </strong></strong>, <em>__</em></li>
-<li>Identify the values in the object below: <strong><strong>, </strong></strong>, <em>__</em></li>
+<li>Identify the name/keys in the object below: name, breed, age, color</li>
+<li>Identify the values in the object below: Elly, Rottweiler, 4, black</li>
 </ul>
 
 </div>
@@ -839,6 +873,53 @@ false
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="kd">let</span> <span class="nx">timeof</span> <span class="o">=</span> <span class="mf">14</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">timeof</span> <span class="o">&lt;</span> <span class="mf">5</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">greet</span> <span class="o">=</span> <span class="s2">&quot;Good night&quot;</span><span class="p">;</span>
+  <span class="p">}</span> 
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">timeof</span> <span class="o">&gt;=</span> <span class="mf">5</span> <span class="o">&amp;&amp;</span> <span class="nx">timeof</span> <span class="o">&lt;=</span> <span class="mf">12</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">greet</span> <span class="o">=</span> <span class="s2">&quot;Good morning&quot;</span><span class="p">;</span>
+  <span class="p">}</span> 
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">timeof</span> <span class="o">&gt;</span> <span class="mf">12</span> <span class="o">&amp;&amp;</span> <span class="nx">timeof</span> <span class="o">&lt;=</span> <span class="mf">18</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">greet</span> <span class="o">=</span> <span class="s2">&quot;Good afternoon&quot;</span><span class="p">;</span>
+  <span class="p">}</span> 
+<span class="k">else</span> <span class="p">{</span>
+    <span class="nx">greet</span> <span class="o">=</span> <span class="s2">&quot;Good evening&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="nx">greet</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Good afternoon&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Functions:">Functions:<a class="anchor-link" href="#Functions:"> </a></h3>
@@ -866,10 +947,16 @@ false
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="JavaScript-in-HTML--Questions">JavaScript in HTML- Questions<a class="anchor-link" href="#JavaScript-in-HTML--Questions"> </a></h1><ol>
-<li>Where do you store the JavaScript Code?</li>
-<li>How do you import a JS file into HTML?</li>
-<li>What is onClick?</li>
-<li>What tag do you use to write JavaScript code?</li>
+<li><p>Where do you store the JavaScript Code?
+.js files or <script> tags in HTML</p>
+</li>
+<li><p>How do you import a JS file into HTML?</p>
+<script src="name.js"></script>&lt;/li&gt;
+<li><p>What is onClick?
+Desribe what happen when something is clicked, some action or behavior</p>
+</li>
+<li><p>What tag do you use to write JavaScript code?</p>
+<script></li>
 </ol>
 
 </div>
@@ -887,7 +974,9 @@ false
 </div>
 </div>
 </div>
+ 
 
+</script></li></p></li></ol></div></div></div></div>
 
 
   </div><a class="u-url" href="/Aliya/2023/04/27/JSlesson.html" hidden></a>
