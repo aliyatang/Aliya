@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      9 min read
     
 </span></p>
 
@@ -144,10 +144,20 @@ window.onload = wrap_img;
 </h2>
 <ul>
 <li>What is GitHub?</li>
+</ul>
+<p>Code sharing site, progrmamers use to distribute and share code</p>
+<ul>
 <li>Why do we use GitHub? Why not Google Drive or messages?</li>
+</ul>
+<p>Specifically for coding, integrated specifically with Git</p>
+<ul>
 <li>What's the difference between Git and GitHub?</li>
+</ul>
+<p>GitHub is a place where users can share code, Git is way to store code and preform action on code</p>
+<ul>
 <li>Name as many Git commands as you can:</li>
 </ul>
+<p>Git clone, git push, git pull, git config, git checkout, git fork</p>
 
 </div>
 </div>
@@ -160,7 +170,13 @@ window.onload = wrap_img;
 </h2>
 <ul>
 <li>Which is better, MacOS or Windows?</li>
+</ul>
+<p>Neither, Linux is best</p>
+<ul>
 <li>Give some differences between MacOS and Windows in terms of the development we use in APCSP:</li>
+</ul>
+<p>MacOS uses Unix and Windows uses NT system. Unix is is bilt into more sysytmes/programs, making it more developer friendly.</p>
+<ul>
 <li>If you are on Windows, you want to skip the MacOS Setup instructions.</li>
 </ul>
 
@@ -175,9 +191,16 @@ window.onload = wrap_img;
 </h2>
 <ul>
 <li>What is the first tool you remember installing?</li>
+</ul>
+<p>Kernel (to run code)</p>
+<ul>
 <li>Why was installations so hard the first time?</li>
+</ul>
+<p>New to all of us, hard to recognize different error messages and such</p>
+<ul>
 <li>Without looking back at previous notes, name three tools you remember installing. This can be kernels, extensions, any installation for APCSP, and also write why it is needed.</li>
 </ul>
+<p>Homebrew, VSCode, and Docker.</p>
 
 </div>
 </div>
@@ -221,6 +244,20 @@ brew install java <span class="c1"># openjdk install</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -286,6 +323,44 @@ sudo apt install unzip  <span class="c1"># unzip utility</span>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>bash: wsl: command not found
+bash: wsl: command not found
+bash: wsl: command not found
+bash: wsl: command not found
+mkdir: vscode: File exists
+-E		Downloads	Pictures	seaborn-data
+Applications	Library		Postman Agent	src
+Desktop		Movies		Public		utf8
+Documents	Music		opt		vscode
+fatal: destination path 'APCSP' already exists and is not an empty directory.
+bash: shay@MSI:/mnt/c/Users/ShayM$: No such file or directory
+bash: shay@MSI:/mnt/c/Users/ShayM$: No such file or directory
+PS: illegal option -- :
+usage: ps [-AaCcEefhjlMmrSTvwXx] [-O fmt | -o fmt] [-G gid[,gid...]]
+          [-u]
+          [-p pid[,pid...]] [-t tty[,tty...]] [-U user[,user...]]
+       ps [-L]
+--2023-05-01 14:38:20--  https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
+Resolving repo.anaconda.com (repo.anaconda.com)... 104.16.130.3, 104.16.131.3
+Connecting to repo.anaconda.com (repo.anaconda.com)|104.16.130.3|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 690850711 (659M) [application/x-sh]
+Saving to: 'Anaconda3-2022.05-Linux-x86_64.sh.1'
+
+5-Linux-x86_64.sh.1   8%[&gt;                   ]  57.97M  11.1MB/s    eta 59s    
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -343,6 +418,38 @@ Available kernels:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>bash: syntax error near unexpected token `id:~$'
+bash: syntax error near unexpected token `id:~$'
+bash: syntax error near unexpected token `id:~$'
+bash: Available: command not found
+/opt/homebrew/bin/python3: can't open file '/home/shay/.local/share/jupyter/kernels/python3': [Errno 2] No such file or directory
+bash: syntax error near unexpected token `id:~$'
+bash: syntax error near unexpected token `id:~$'
+bash: Collecting: command not found
+bash: syntax error near unexpected token `('
+bash: syntax error near unexpected token `('
+bash: syntax error near unexpected token `('
+bash: Installing: command not found
+bash: Successfully: command not found
+bash: syntax error near unexpected token `id:~$'
+bash: Installing: command not found
+bash: syntax error near unexpected token `id:~$'
+bash: Available: command not found
+bash: /home/shay/.local/share/jupyter/kernels/bash: No such file or directory
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -361,6 +468,9 @@ Available kernels:
 <a class="anchor" href="#Before-We-Set-Up-Pages,-A-Guide-to-Git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Before We Set Up Pages, A Guide to Git<a class="anchor-link" href="#Before-We-Set-Up-Pages,-A-Guide-to-Git"> </a>
 </h2>
 <p>As we've discussed, Git is different from GitHub. Because GitHub is merely the place where we store Git repos, we use Git's commands to help us get, open, and configure these repositories. Here are some of the Git commands you should be using a lot (In the comments, tell what each Git command does):</p>
+<ul>
+<li>See answers in comments</li>
+</ul>
 
 </div>
 </div>
@@ -373,16 +483,46 @@ Available kernels:
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>git clone <span class="o">{</span>repos-name-here.git<span class="o">}</span> <span class="c1"># what does it do?</span>
+<span class="c1"># make a clone or copy of a repository at in a new directory at another location</span>
+
 git checkout <span class="o">[</span>branch<span class="o">]</span> <span class="c1"># what does it do?</span>
+<span class="c1"># lets you navigate between the branches created by git branch</span>
+
 git fork <span class="o">{</span>repos-name-here.git<span class="o">}</span> <span class="c1"># what does it do?</span>
+<span class="c1"># new fork in repository to separate changes, a fork is a copy of an existing reposity where the new owner disconnects the codebase from previous committers</span>
+
 git commit -m <span class="o">{</span><span class="s2">"commit-msg"</span><span class="o">}</span> <span class="c1"># what does it do?</span>
+<span class="c1"># captures a snapshot of the project's currently staged changes</span>
+
 git pull <span class="c1"># what does it do?</span>
+<span class="c1"># fetch and download content from a remote repository and immediately update the local repository to match that content</span>
+
 git push <span class="c1"># what does it do?</span>
+<span class="c1"># upload local repository content to a remote repository</span>
 
 <span class="c1"># After this line, name other commands that you can use and what they do. This should be easy, as you've already answered the qeue</span>
+git add <span class="o">{</span>file-name-here<span class="o">}</span> <span class="c1"># adds a change in the working directory to the staging area</span>
+git clean <span class="c1"># deleting untracked files in a repo's working directory</span>
+git status <span class="c1"># displays the state of the working directory and the staging area</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>fatal: repository '{repos-name-here.git}' does not exist
+fatal: not a git repository (or any of the parent directories): .git
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -422,6 +562,7 @@ git push <span class="c1"># what does it do?</span>
 <li>frontend hack goes here</li>
 <li>backend hack goes here</li>
 </ul>
+<p>SEE OTHER NOTEBOOK</p>
 
 </div>
 </div>
