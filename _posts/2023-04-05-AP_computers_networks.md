@@ -18,21 +18,34 @@ week: 29
 > As we have learned, a computer needs aa program to do something smart.  The sequence of a program initiates a series of actions with the computers Central Processing Unit (CPU). This component is essentially a binary machine focussing on program instructions provided.  The CPU retrieives and stores the data it acts upon in Random Access Memory (RAM). Between the CPU, RAM, and Storage Devices a computer can work with many programs and large amounts of data.
 
 List specification of your Computer, or Computers if working as Pair/Trio
-- Processor GHz:
-- Memory in GB:
-- Storage in GB:
-- OS: Mac
+- Processor GHz: Apple M2 2.4 GHz
+- Memory in GB: 8 GB
+- Storage in GB: 500 GB Flash Storage
+- OS: macOS Montery Version 12.5
 
 Define or describe usage of Computer using Computer Programs. Pictures are preferred over a lot of text.  Use your experience.
-- Input devices
-- Output devices
-- Program File
-- Program Code
-- Processes
-- Ports
-- Data File
-- Inspect Running Code
-- Inspect Variables
+- Input devices: send info to a computer system for processing
+- Output devices: reproduces/displays result of that info
+![This is an image](https://static.javatpoint.com/computer/images/input-device-vs-output-device.png)
+
+- Program File: file containing code or instructions that can be executed by computer for a task or goal
+![This is an image](https://www.partitionwizard.com/images/uploads/articles/2019/12/program-files-x86-vs-program-files/program-files-x86-vs-program-files-1.png)
+
+- Program Code: set of instructions writtenin programming lanuage that can create an executable program
+![This is an image](https://upload.wikimedia.org/wikipedia/commons/3/39/C_Hello_World_Program.png)
+
+- Processes: See processes running in activity monitor (on mac), they are areas of program activity thatn normally run parallel to each other
+![This is an image](https://help.apple.com/assets/63D42DEC71F9CB56F3286525/63D42DF271F9CB56F328652E/en_US/91d4318f871a7c26b58074fc3f94bf8d.png)
+
+- Ports: virtual pont where network connections start and end
+![This is an image](https://networkinterview.com/wp-content/uploads/2019/07/PORT.jpg)
+
+- Data File: contains actual data/view of the data, only meant to be read or viewed, NOT executed (such as word file, excel file)
+![This is an image](https://www.researchgate.net/publication/220913298/figure/fig3/AS:667773554401285@1536221030394/Data-file-example-Access-format.ppm)
+
+- Inspect Running Code: examining a program's execution in real time to check for errors, monitor performance, gather info about its behavior
+
+- Inspect Variables: examining a variables value or contents at a specific point in a program's execution to see its role/behavior in the program. This an be done with debugging.
 
 
 ![Computer Hardware]({{site.baseurl}}/images/cpu.jpeg)
@@ -52,16 +65,21 @@ Define or describe usage of Computer using Computer Programs. Pictures are prefe
     - Bandwidth is usually measured in bits per second
 
 - Complete Vocabulary Matching Activity.  Incorporate this into your learnings from year.  To analyze measure path and latency use `traceroute` and `ping` commands from Linux Terminal.  
-    - Path 
-    - Route
-    - Computer System
-    - Computer Device
-    - Bandwidth
-    - Computer Network
+    - Path: a
+    - Route: e
+    - Computer System: b
+    - Computer Device: c
+    - Bandwidth: d
+    - Computer Network: f
+
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2023-05-01-pic1.png?raw=true)
+
+All of these terms are part of the internet and computers, which we use everyday and are a part of a learnings from the year. We use computer systmes and computer devices in class, for example, our laptops and working together with others on laptops. Another example is when connecting CRUD backend and frontend, the path is the link to the frotend page to access it. IP (internet protocol) is responsible for guiding message routing (routes) between systems by dividing them into packets, which are reconstructed by the network, aided by computer networks connecting servers and computers holding data.
 
 > Watch/review College Board Daily Video 4.1.2
 
 - Complete True of False Questions
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2023-05-01-pic2.png?raw=true)
 
 - Essential Knowledge
     - The internet is a computer network consisting of interconnected networks that use standardized, open (nonproprierary) communication protocols.
@@ -82,6 +100,8 @@ Define or describe usage of Computer using Computer Programs. Pictures are prefe
 - Go over AP videos, vocabulary, and essential knowledge.  Draw a diagram showing the internet and its many levels. A preferred diagram would using your knowledge of frontend, backend, deployment, etc.  Picture would highligh vocabulary by illustration. The below illustration have some ideas
 
 ![Full Stack]({{site.baseurl}}/images/fullstack.png)
+
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2023-05-01-pic3.png?raw=true)
 
 
 - Often we draw pictures of machines communicating over the Internet with arrows.  However, the real communication goes through protocol layers and the machine and then is trasported of the network.   For College Board and future Computer Knowledge you should become familiar with the following ...
@@ -114,6 +134,35 @@ The "network" layer is responsible for ***routing data packets between networks*
 > Watch both Daily videos for 4.2
 
 - Complete the network activity, summarize your understanding of fault tolerance.
+
+
+
+Daily Video 1
+
+* For each of these examples, keep in mind: More than one path available for paths between each of the devices = fault tolerant
+
+1. Yes, there is more than one path available, at least two paths, for each of the other devices.
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2023-05-01-pic4.png?raw=true)
+* picture to get the idea... not gonna add pictures for all
+
+2. No, for F there is only one path to it, from C to F. If that one is broken, then connection to F is lost. This is not fault tolerant.
+
+3. No, for A there is only one path to it, from A to G. If that one is broken, then connection to A is lost. This is not fault tolerant.
+
+Daily Video 2
+
+Which of the following is NOT a benefit of a fault tolerant network?
+
+- a. data has more than one path to travel from one device to another
+- b. if part of the network fails, the network ca still function using other paths
+- c. data will only take one route from one device to another, no matter the number of routes avaiable
+- d. more devices creates more connections and makes the network stronger
+
+The answer is C, if the data only takes one single route that defeats the purpose of fault tolerance and using multiple routes to travel to make the network stronger
+
+![This is an image](https://github.com/aliyatang/Aliya/blob/master/images/2023-05-01-pic5.png?raw=true)
+I see here that A only has one path to it, so I probably want to have a connection from A to something else. So, a connection from A to B would be best here. Answer choice A.
+
 Fault tolerance 
 
 Fault tolerance is a process that enables an operating system to respond to a failure in hardware or software. This fault-tolerance definition refers to the system's ability to continue operating despite failures or malfunctions.
@@ -123,13 +172,17 @@ Fault tolerance is a process that enables an operating system to respond to a fa
 ### Parallel and Distributed Computing
 > Review previous lecture on Parallel Computing and watch Daily vidoe 4.3.  Think of ways to make something in you team project to utilize Cores more effectively.  Here are some thoughts to add to your story of Computers and Networks...
 
-- What is naturally Distributed in Frontend/Backend archeticture?  
+- What is naturally Distributed in Frontend/Backend archeticture? 
+The frontend is distributed across multiple devices, while the backend is centralized and runs on dedicated servers or cloud-based infrastructure.
 
 - Analyze this command in Docker: ```ENV GUNICORN_CMD_ARGS="--workers=1 --bind=0.0.0.0:8086"```.   Determine if there is options are options in this command for parallel computing within the server that runs python/gunicorn.  Here is an [article](https://medium.com/building-the-system/gunicorn-3-means-of-concurrency-efbb547674b7)
+It sets an environement variable named GUNICORN_CMD_ARGS, with the value --workers=1 --bind=0.0.0.0:8086. 
 
+The --workers option in the ENV GUNICORN_CMD_ARGS command sets the number of worker processes that Gunicorn will use to handle incoming requests. A value of 1 means that Gunicorn will use a single worker process. This option controls the number of requests that can be handled simultaneously, but it is not related to parallel computing within the server that runs Python/Gunicorn. Using more than 1 worker process can improve the server's capacity to handle multiple requests at once.
 
 > Last week we discussed parallel computing on local machine.  There are many options.  Here is something to get parallel computing work with a tool called Ray.
 - Review this [article](https://www.anyscale.com/blog/writing-your-first-distributed-python-application-with-ray)...  Can you get parallel code on images to work more effectively?  I have not tried Ray.
+To process images faster, you can use a parallelization technique called data parallelism, where the same calculation is applied to multiple parts of the image simultaneously
 
 - Code example from ChatGPT using squares.  This might be more interesting if nums we generated to be a lot bigger.
 
